@@ -36,10 +36,21 @@
       </a>
 
       <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navigazione principale">
+        <button class="nav-close" id="nav-close" aria-label="Chiudi menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
         <a href="#servizi" class="nav-link">Servizi</a>
         <a href="#perche-noi" class="nav-link">Perché Noi</a>
         <a href="#testimonianze" class="nav-link">Recensioni</a>
         <a href="#contatti" class="nav-link">Contatti</a>
+        <a href="tel:+393206403331" class="nav-mobile-cta" aria-label="Chiama ora 320 640 3331">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Chiama Ora
+        </a>
       </nav>
 
       <a href="tel:+393206403331" class="btn btn-emergency nav-cta" aria-label="Chiama ora 320 640 3331">
@@ -83,15 +94,15 @@
         <div class="hero-content reveal">
           <div class="hero-badge">
             <span class="badge-dot" aria-hidden="true"></span>
-            <span>Montesilvano · Pescara</span>
+            <span>Officina Multimarca · Montesilvano (PE)</span>
           </div>
           <h1 id="hero-headline" class="hero-headline">
             Ogni spia accesa<br />
-            <em>ha una risposta.</em><br />
-            Noi la troviamo.
+            <em>ha una causa precisa.</em>
+            Noi la diagnostichiamo.
           </h1>
           <p class="hero-body">
-            Officina multimarca a Montesilvano. Diagnosi OBD2, tagliandi, elettronica e cambi automatici.<br />
+            Diagnostica OBD2 professionale, tagliandi, elettrauto e cambi automatici.
             Preventivo scritto prima di toccare. Nessuna sorpresa in fattura.
           </p>
           <div class="hero-actions">
@@ -177,7 +188,13 @@
       </div>
 
       <div class="hero-scroll-cue" aria-hidden="true">
+        <span class="scroll-label">Scorri</span>
         <div class="scroll-line"></div>
+      </div>
+
+      <div class="hero-claim" id="hero-claim" aria-hidden="true">
+        <p class="hero-claim-eyebrow">Officina multimarca · Montesilvano</p>
+        <p class="hero-claim-text">Diagnosi che non mentono.</p>
       </div>
     </section>
     </div><!-- /.hero-scroll-wrapper -->
@@ -187,10 +204,10 @@
     ═══════════════════════════════════════════════════════ -->
     <section class="section section-services" id="servizi" aria-labelledby="services-title">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-header centered reveal">
           <p class="section-eyebrow">Cosa facciamo</p>
           <h2 id="services-title" class="section-title">Servizi di precisione,<br /><span style="color:var(--primary)">per ogni vettura</span></h2>
-          <p class="section-subtitle">Ogni marca, ogni modello. Interventi documentati e garantiti.</p>
+          <p class="section-subtitle">Ogni marca, ogni modello, ogni anno di immatricolazione. Interventi documentati e garantiti.</p>
         </div>
 
         <div class="services-grid">
@@ -245,7 +262,7 @@
           </article>
 
           <!-- Cambi Automatici -->
-          <article class="service-card reveal" aria-labelledby="svc-cambi">
+          <article class="service-card reveal reveal-delay-3" aria-labelledby="svc-cambi">
             <div class="service-card-inner">
               <div class="service-icon-wrap">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -296,7 +313,7 @@
           </article>
 
           <!-- Revisioni -->
-          <article class="service-card reveal" aria-labelledby="svc-revisioni">
+          <article class="service-card reveal reveal-delay-2" aria-labelledby="svc-revisioni">
             <div class="service-card-inner">
               <div class="service-icon-wrap">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -312,7 +329,7 @@
           </article>
 
           <!-- Pneumatici -->
-          <article class="service-card reveal reveal-delay-1" aria-labelledby="svc-pneumatici">
+          <article class="service-card reveal reveal-delay-3" aria-labelledby="svc-pneumatici">
             <div class="service-card-inner">
               <div class="service-icon-wrap">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -341,7 +358,7 @@
           <div class="why-content reveal">
             <p class="section-eyebrow">Perché sceglierci</p>
             <h2 id="why-title" class="section-title">Non sei obbligato a<br /><span style="color:var(--primary)">fidarti — verificalo.</span></h2>
-            <p class="why-lead">Ogni veicolo che entra in officina riceve un referto scritto prima che inizi qualsiasi lavoro. Sai esattamente cosa c'è, perché si fa e quanto costa. Niente di più, niente di meno.</p>
+            <p class="why-lead">Ogni veicolo che entra in officina riceve un referto diagnostico scritto prima che inizi qualsiasi intervento. Sai esattamente cosa è stato rilevato, perché si interviene e quanto costa. Nessuna lavorazione parte senza la tua approvazione.</p>
 
             <div class="pillars-list">
               <div class="pillar">
@@ -466,9 +483,10 @@
     ═══════════════════════════════════════════════════════ -->
     <section class="section section-testimonials" id="testimonianze" aria-labelledby="testi-title">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-header centered reveal">
           <p class="section-eyebrow">Cosa dicono i clienti</p>
           <h2 id="testi-title" class="section-title">Fiducia guadagnata,<br /><span style="color:var(--primary)">intervento dopo intervento</span></h2>
+          <p class="section-subtitle">Recensioni verificate da clienti reali nella zona di Montesilvano e Pescara.</p>
         </div>
 
         <div class="testimonials-grid">
@@ -486,7 +504,7 @@
             </footer>
           </blockquote>
 
-          <blockquote class="testimonial-card reveal reveal-delay-1">
+          <blockquote class="testimonial-card reveal reveal-delay-3">
             <div class="testi-stars" aria-label="5 stelle su 5">
               <span aria-hidden="true">★★★★★</span>
             </div>
@@ -500,7 +518,7 @@
             </footer>
           </blockquote>
 
-          <blockquote class="testimonial-card reveal reveal-delay-2">
+          <blockquote class="testimonial-card reveal reveal-delay-4">
             <div class="testi-stars" aria-label="5 stelle su 5">
               <span aria-hidden="true">★★★★★</span>
             </div>
@@ -601,7 +619,7 @@
           <div class="cta-glow" aria-hidden="true"></div>
           <p class="section-eyebrow" style="color:var(--on-primary-container)">Pronto a iniziare?</p>
           <h2 id="cta-title" class="cta-headline">Porta la tua auto.<br />Ti diciamo la verità.</h2>
-          <p class="cta-body">Nessuna spia dovrebbe restare accesa senza una spiegazione chiara. Prenota una diagnosi — preventivo scritto, nessun impegno.</p>
+          <p class="cta-body">Nessuna anomalia dovrebbe restare senza una risposta diagnostica precisa. Prenota un'analisi OBD2 — preventivo scritto incluso, nessun impegno preliminare.</p>
           <div class="cta-actions">
             <a href="tel:+393206403331" class="btn btn-emergency btn-lg" aria-label="Chiama 320 640 3331">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -628,7 +646,7 @@
         <div class="section-header reveal">
           <p class="section-eyebrow">Dove siamo</p>
           <h2 id="contact-title" class="section-title">Siamo a Montesilvano,<br /><span style="color:var(--primary)">a 5 minuti dall'autostrada.</span></h2>
-          <p class="section-subtitle">Parcheggio comodo, nessuna fila. Chiamaci per concordare l'orario e trovare subito disponibilità.</p>
+          <p class="section-subtitle">Parcheggio gratuito in sede. Chiamaci per prenotare il tuo appuntamento — disponibilità garantita entro 48 ore.</p>
         </div>
 
         <div class="contact-grid">
@@ -722,12 +740,12 @@
     ═══════════════════════════════════════════════════════ -->
     <section class="section section-form" id="preventivo" aria-labelledby="form-title">
       <div class="container">
+        <div class="form-header">
+          <p class="section-eyebrow">Scrivici</p>
+          <h2 id="form-title" class="section-title">Descrivimi il problema.<br /><span style="color:var(--primary)">Ci pensiamo noi.</span></h2>
+          <p class="section-subtitle">Rispondiamo entro poche ore. Nessun impegno, nessuna sorpresa.</p>
+        </div>
         <div class="form-block reveal">
-          <div class="form-header">
-            <p class="section-eyebrow">Scrivici</p>
-            <h2 id="form-title" class="section-title">Descrivimi il problema.<br /><span style="color:var(--primary)">Ci pensiamo noi.</span></h2>
-            <p class="section-subtitle">Rispondiamo entro poche ore. Nessun impegno, nessuna sorpresa.</p>
-          </div>
           <!-- Sostituisci l'action con il tuo endpoint Formspree: https://formspree.io -->
           <form class="contact-form" action="mailto:russu1990@pec.it" method="GET" enctype="text/plain" novalidate>
             <div class="form-row">
@@ -785,39 +803,111 @@
        FOOTER
   ═══════════════════════════════════════════════════════ -->
   <footer class="footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="#" class="nav-logo" aria-label="Alex Car Service">
-          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-            <rect width="36" height="36" rx="6" fill="#004AAD"/>
-            <path d="M7 22l3-8h16l3 8H7z" stroke="#d9e2ff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
-            <circle cx="11" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
-            <circle cx="25" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
-          </svg>
-          <span class="nav-logo-text">
-            <span class="nav-logo-main">Alex Car Service</span>
-            <span class="nav-logo-sub">di Russu Oleksandr</span>
-          </span>
-        </a>
-        <p class="footer-tagline">Officina multimarca a Montesilvano dal 2010. Diagnosi precisa, preventivo scritto, nessuna sorpresa in fattura.</p>
-      </div>
+    <div class="footer-top-bar" aria-hidden="true"></div>
 
-      <div class="footer-links">
-        <nav aria-label="Link footer">
-          <a href="#servizi" class="footer-link">Servizi</a>
-          <a href="#perche-noi" class="footer-link">Perché Noi</a>
-          <a href="#faq" class="footer-link">FAQ</a>
-          <a href="#contatti" class="footer-link">Contatti</a>
-          <a href="#preventivo" class="footer-link">Richiedi preventivo</a>
+    <div class="container">
+      <div class="footer-main">
+
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo" aria-label="Alex Car Service">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+              <rect width="36" height="36" rx="6" fill="#004AAD"/>
+              <path d="M7 22l3-8h16l3 8H7z" stroke="#d9e2ff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+              <circle cx="11" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
+              <circle cx="25" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
+            </svg>
+            <span class="nav-logo-text">
+              <span class="nav-logo-main">Alex Car Service</span>
+              <span class="nav-logo-sub">di Russu Oleksandr</span>
+            </span>
+          </a>
+          <p class="footer-tagline">Officina multimarca a Montesilvano dal 2010. Diagnostica professionale, preventivo scritto prima di ogni intervento, garanzia sui lavori eseguiti.</p>
+
+          <div class="footer-cta-row">
+            <a href="tel:+393206403331" class="footer-cta-btn" aria-label="Chiama 320 640 3331">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              320 640 3331
+            </a>
+            <a href="https://maps.google.com/?q=Via+A.+Vespucci+16+Montesilvano+PE" target="_blank" rel="noopener noreferrer" class="footer-cta-btn footer-cta-ghost" aria-label="Apri in Google Maps">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Indicazioni
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation column -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Navigazione</h3>
+          <nav aria-label="Footer navigazione">
+            <a href="#servizi" class="footer-link">Servizi</a>
+            <a href="#perche-noi" class="footer-link">Perché Noi</a>
+            <a href="#faq" class="footer-link">FAQ</a>
+            <a href="#contatti" class="footer-link">Contatti</a>
+            <a href="#preventivo" class="footer-link footer-link-accent">Richiedi Preventivo</a>
+          </nav>
+        </div>
+
+        <!-- Services column -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Specializzazioni</h3>
+          <nav aria-label="Footer servizi">
+            <a href="#servizi" class="footer-link">Tagliando & Revisione</a>
+            <a href="#servizi" class="footer-link">Diagnostica Elettronica</a>
+            <a href="#servizi" class="footer-link">Freni & Sospensioni</a>
+            <a href="#servizi" class="footer-link">Cambio & Trasmissione</a>
+            <a href="#servizi" class="footer-link">Climatizzazione</a>
+          </nav>
+        </div>
+
+        <!-- Contact column -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Dove & Quando</h3>
+          <ul class="footer-info-list" role="list">
+            <li class="footer-info-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Via A. Vespucci, 16<br>65015 Montesilvano (PE)</span>
+            </li>
+            <li class="footer-info-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span>Lun–Ven&nbsp;&nbsp;08:30 – 18:30<br>Sabato&nbsp;&nbsp;&nbsp;&nbsp;08:30 – 12:30</span>
+            </li>
+            <li class="footer-info-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              <a href="tel:+393206403331" class="footer-info-link">320 640 3331</a>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /footer-main -->
+
+      <div class="footer-divider" role="separator" aria-hidden="true"></div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-meta">
+          <p>P.IVA 02859570695 &middot; C.F. RSSLSN90M23Z138N &middot; SDI: M5UXCR1</p>
+          <p>&copy; <span id="year"></span> Alex Car Service. Tutti i diritti riservati. &middot; Powered by <strong>GRY Bromer</strong></p>
+        </div>
+        <nav class="footer-legal-links" aria-label="Link legali">
+          <a href="#" class="footer-legal-link">Privacy Policy</a>
+          <a href="#" class="footer-legal-link">Cookie Policy</a>
+          <a href="#" class="footer-legal-link">Note Legali</a>
+          <a href="#" class="footer-legal-link">Trattamento Dati</a>
         </nav>
       </div>
 
-      <div class="footer-legal">
-        <p>P.IVA 02859570695 · C.F. RSSLSN90M23Z138N</p>
-        <p>Cod. univoco SDI: M5UXCR1</p>
-        <p class="footer-copy">© <span id="year"></span> Alex Car Service. Tutti i diritti riservati.</p>
-      </div>
-    </div>
+    </div><!-- /container -->
   </footer>
 
   <script src="script.js"></script>

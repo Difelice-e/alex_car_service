@@ -13,6 +13,7 @@
   // Applies .scrolled only after the hero scroll wrapper is fully past.
   const navHeader   = document.getElementById('nav-header');
   const heroWrapper = document.querySelector('.hero-scroll-wrapper');
+  const serviziSection = document.getElementById('servizi');
 
   if (navHeader) {
     if (heroWrapper && 'IntersectionObserver' in window) {
@@ -20,13 +21,19 @@
         ([entry]) => navHeader.classList.toggle('scrolled', !entry.isIntersecting),
         { threshold: .3 }
       ).observe(heroWrapper);
+      new IntersectionObserver(
+        ([entry]) => document.body.classList.toggle('no-scroll', !entry.isIntersecting),
+        { threshold: 0, rootMargin: '0px 0px 0px 0px' }
+      ).observe(serviziSection);
     } else {
       // Fallback: use hero wrapper height, or viewport height if wrapper not found
       const getThreshold = () => heroWrapper
         ? heroWrapper.offsetTop + heroWrapper.offsetHeight
         : window.innerHeight;
       const onScroll = () => navHeader.classList.toggle('scrolled', window.scrollY >= getThreshold());
+      const onScroll2 = () => ndocument.body.classList.toggle('no-scroll', window.scrollY >= getThreshold());
       window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('scroll', onScroll2, { passive: true });
       onScroll();
     }
   }

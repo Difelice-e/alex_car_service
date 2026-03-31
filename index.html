@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Officina Alex Car Service – Diagnosi elettronica, tagliandi multimarca, aria condizionata e molto altro a Montesilvano (PE). Chiamaci al 320 640 3331." />
+  <title>Alex Car Service – Officina a Montesilvano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Vai al contenuto</a>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════════════ -->
+  <header class="nav-header" id="nav-header" role="banner">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo" aria-label="Alex Car Service – torna all'inizio">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true" focusable="false">
+          <rect width="36" height="36" rx="6" fill="#004AAD"/>
+          <path d="M7 22l3-8h16l3 8H7z" stroke="#d9e2ff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+          <circle cx="11" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
+          <circle cx="25" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
+          <path d="M10 18l2-4h12l2 4" stroke="#b0c6ff" stroke-width="1" fill="none"/>
+          <path d="M24 13l3-3M24 13l1.5-4" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nav-logo-text">
+          <span class="nav-logo-main">Alex Car Service</span>
+          <span class="nav-logo-sub">Officina Multimarca</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navigazione principale">
+        <a href="#servizi" class="nav-link">Servizi</a>
+        <a href="#perche-noi" class="nav-link">Perché Noi</a>
+        <a href="#testimonianze" class="nav-link">Recensioni</a>
+        <a href="#contatti" class="nav-link">Contatti</a>
+      </nav>
+
+      <a href="tel:+393206403331" class="btn btn-emergency nav-cta" aria-label="Chiama ora 320 640 3331">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        Chiama Ora
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════ -->
+    <div class="hero-scroll-wrapper">
+    <section class="hero" aria-labelledby="hero-headline">
+      <div class="hero-bg" aria-hidden="true">
+        <video
+          id="hero-video"
+          class="hero-video"
+          preload="auto"
+          muted
+          playsinline
+          aria-hidden="true"
+        >
+          <source src="brand_assets/output.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-video-overlay"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-content reveal">
+          <div class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>Montesilvano · Pescara</span>
+          </div>
+          <h1 id="hero-headline" class="hero-headline">
+            Ogni spia accesa<br />
+            <em>ha una risposta.</em><br />
+            Noi la troviamo.
+          </h1>
+          <p class="hero-body">
+            Officina multimarca a Montesilvano. Diagnosi OBD2, tagliandi, elettronica e cambi automatici.<br />
+            Preventivo scritto prima di toccare. Nessuna sorpresa in fattura.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:+393206403331" class="btn btn-emergency btn-lg" aria-label="Chiama 320 640 3331">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              320 640 3331
+            </a>
+            <a href="#servizi" class="btn btn-secondary btn-lg">
+              Scopri i servizi
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay-1" aria-hidden="true">
+          <div class="hero-card" id="diag-card">
+            <div class="hero-card-header">
+              <div class="diag-obd-label">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M8 11v2M12 11v2M16 11v2"/><path d="M5 7V5a2 2 0 012-2h10a2 2 0 012 2v2"/></svg>
+                <span>OBD-II</span>
+              </div>
+              <span class="diag-header-title">Diagnostica Veicolo</span>
+              <span class="status-dot status-critical" id="diag-status-dot" title="Critico"></span>
+            </div>
+
+            <div class="diag-alert" id="diag-alert" data-state="critical">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span id="diag-alert-text">4 anomalie rilevate</span>
+            </div>
+
+            <div class="diag-scan-bar"><div class="diag-scan-fill" id="diag-scan-fill"></div></div>
+
+            <div class="hero-card-body">
+              <div class="diag-row">
+                <svg class="diag-row-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                <span class="diag-label">Motore</span>
+                <span class="diag-val" id="dv-motore">Anomalia critica</span>
+              </div>
+              <div class="diag-row">
+                <svg class="diag-row-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+                <span class="diag-label">Freni</span>
+                <span class="diag-val" id="dv-freni">Usura elevata</span>
+              </div>
+              <div class="diag-row">
+                <svg class="diag-row-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <span class="diag-label">Trasmissione</span>
+                <span class="diag-val" id="dv-trasmissione">Errore P0700</span>
+              </div>
+              <div class="diag-row">
+                <svg class="diag-row-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg>
+                <span class="diag-label">Clima</span>
+                <span class="diag-val" id="dv-clima">Refrigerante critico</span>
+              </div>
+            </div>
+
+            <div class="hero-card-footer">
+              <span class="label-sm" id="diag-footer-left" style="color:var(--on-surface-variant)">Analisi in corso…</span>
+              <span class="label-sm" id="diag-footer-right" style="color:var(--secondary)">4 errori attivi</span>
+            </div>
+          </div>
+
+          <div class="hero-stat-strip">
+            <div class="hero-stat">
+              <span class="hero-stat-num">15+</span>
+              <span class="hero-stat-label">Anni di esperienza</span>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">3000+</span>
+              <span class="hero-stat-label">Veicoli assistiti</span>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">100%</span>
+              <span class="hero-stat-label">Trasparenza</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+    </div><!-- /.hero-scroll-wrapper -->
+
+    <!-- ═══════════════════════════════════════════════════════
+         SERVICES
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section-services" id="servizi" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Cosa facciamo</p>
+          <h2 id="services-title" class="section-title">Servizi di precisione,<br /><span style="color:var(--primary)">per ogni vettura</span></h2>
+          <p class="section-subtitle">Ogni marca, ogni modello. Interventi documentati e garantiti.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Diagnosi Elettronica -->
+          <article class="service-card reveal" aria-labelledby="svc-diagnosi">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
+                  <path d="M7 8l3 3 2-4 3 5 2-2"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 id="svc-diagnosi" class="service-title">Diagnosi Elettronica</h3>
+                <p class="service-desc">Lettura completa dei codici di errore con strumentazione OBD2 professionale. Analisi precisa, referto scritto.</p>
+              </div>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+            </div>
+          </article>
+
+          <!-- Tagliandi Multimarca -->
+          <article class="service-card reveal reveal-delay-1" aria-labelledby="svc-tagliandi">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 id="svc-tagliandi" class="service-title">Tagliandi Multimarca</h3>
+                <p class="service-desc">Tagliandi secondo le specifiche del costruttore per ogni marca. Ricambi originali o equivalenti certificati.</p>
+              </div>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+            </div>
+          </article>
+
+          <!-- Aria Condizionata -->
+          <article class="service-card reveal reveal-delay-2" aria-labelledby="svc-clima">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 id="svc-clima" class="service-title">Aria Condizionata</h3>
+                <p class="service-desc">D'estate soffoca, d'inverno appanna. Ricarica, sanificazione e revisione del climatizzatore. Gas certificato R134a e R1234yf.</p>
+              </div>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+            </div>
+          </article>
+
+          <!-- Cambi Automatici -->
+          <article class="service-card reveal" aria-labelledby="svc-cambi">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/>
+                  <polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 id="svc-cambi" class="service-title">Cambi Automatici</h3>
+                <p class="service-desc">Prima di cambiarlo, lasciaci esaminarlo. Revisione e riparazione di cambi automatici, DSG e CVT. Spesso si ripara — con un risparmio significativo.</p>
+              </div>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+            </div>
+          </article>
+
+          <!-- Elettrauto -->
+          <article class="service-card reveal reveal-delay-1" aria-labelledby="svc-elettrauto">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 id="svc-elettrauto" class="service-title">Elettrauto</h3>
+                <p class="service-desc">Impianti elettrici, alternatori, motorini di avviamento e centraline. Guasto elettrico? Lo troviamo con strumentazione professionale, non a tentativi.</p>
+              </div>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+            </div>
+          </article>
+
+          <!-- Freni & Sospensioni -->
+          <article class="service-card reveal reveal-delay-2" aria-labelledby="svc-freni">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 id="svc-freni" class="service-title">Freni e Sospensioni</h3>
+                <p class="service-desc">Sostituzione pastiglie, dischi, pinze e revisione delle sospensioni. Sicurezza verificata strumentalmente.</p>
+              </div>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+            </div>
+          </article>
+
+          <!-- Revisioni -->
+          <article class="service-card reveal" aria-labelledby="svc-revisioni">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 id="svc-revisioni" class="service-title">Revisioni</h3>
+                <p class="service-desc">Niente sorprese allo sportello. Controllo completo prima dell'appuntamento in modo che la revisione ministeriale non sia mai un problema.</p>
+              </div>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+            </div>
+          </article>
+
+          <!-- Pneumatici -->
+          <article class="service-card reveal reveal-delay-1" aria-labelledby="svc-pneumatici">
+            <div class="service-card-inner">
+              <div class="service-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <circle cx="12" cy="12" r="6"/>
+                  <circle cx="12" cy="12" r="2"/>
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 id="svc-pneumatici" class="service-title">Pneumatici</h3>
+                <p class="service-desc">Montaggio, equilibratura e convergenza. Fornitura di pneumatici per tutte le stagioni e ogni budget.</p>
+              </div>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         WHY CHOOSE US
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section-why" id="perche-noi" aria-labelledby="why-title">
+      <div class="container">
+        <div class="why-inner">
+          <div class="why-content reveal">
+            <p class="section-eyebrow">Perché sceglierci</p>
+            <h2 id="why-title" class="section-title">Non sei obbligato a<br /><span style="color:var(--primary)">fidarti — verificalo.</span></h2>
+            <p class="why-lead">Ogni veicolo che entra in officina riceve un referto scritto prima che inizi qualsiasi lavoro. Sai esattamente cosa c'è, perché si fa e quanto costa. Niente di più, niente di meno.</p>
+
+            <div class="pillars-list">
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Diagnosi trasparente</h3>
+                  <p class="pillar-desc">Ogni anomalia rilevata viene documentata e spiegata prima di procedere. Zero sorprese in fattura.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Tempi certi</h3>
+                  <p class="pillar-desc">Preventivo con tempi di consegna definiti. Il tuo tempo è prezioso quanto la tua vettura.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Ricambi certificati</h3>
+                  <p class="pillar-desc">Utilizziamo esclusivamente ricambi originali o equivalenti omologati OE. Qualità misurabile.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="pillar-title">Assistenza diretta</h3>
+                  <p class="pillar-desc">Parli direttamente con chi lavora sulla tua auto. Nessun intermediario. Responsabilità personale.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-visual reveal reveal-delay-1" aria-hidden="true">
+            <div class="spec-panel glass">
+              <div class="spec-panel-header">
+                <span class="label-sm" style="color:var(--on-surface-variant);letter-spacing:0.08em;text-transform:uppercase">Report Diagnostico</span>
+                <span class="badge badge-primary">Completato</span>
+              </div>
+              <div class="spec-list">
+                <div class="spec-item">
+                  <span class="spec-key">Centralina ECU</span>
+                  <div class="spec-bar-wrap"><div class="spec-bar" style="--fill:92%"></div></div>
+                  <span class="spec-pct" style="color:var(--primary)">92%</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-key">Impianto frenante</span>
+                  <div class="spec-bar-wrap"><div class="spec-bar" style="--fill:88%"></div></div>
+                  <span class="spec-pct" style="color:var(--primary)">88%</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-key">Trasmissione</span>
+                  <div class="spec-bar-wrap"><div class="spec-bar" style="--fill:95%"></div></div>
+                  <span class="spec-pct" style="color:var(--primary)">95%</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-key">Impianto climatiz.</span>
+                  <div class="spec-bar-wrap"><div class="spec-bar spec-bar-warn" style="--fill:61%"></div></div>
+                  <span class="spec-pct" style="color:var(--tertiary)">61%</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-key">Batteria</span>
+                  <div class="spec-bar-wrap"><div class="spec-bar" style="--fill:79%"></div></div>
+                  <span class="spec-pct" style="color:var(--primary)">79%</span>
+                </div>
+              </div>
+              <div class="spec-footer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                </svg>
+                <span class="label-sm" style="color:var(--on-surface-variant)">Analisi completata — 1 attenzione rilevata</span>
+              </div>
+            </div>
+
+            <div class="cert-strip">
+              <div class="cert-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4c5a0" stroke-width="1.5">
+                  <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+                <span>Tecnici certificati</span>
+              </div>
+              <div class="cert-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4c5a0" stroke-width="1.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>Garanzia lavori</span>
+              </div>
+              <div class="cert-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4c5a0" stroke-width="1.5">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                </svg>
+                <span>Preventivo scritto</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section-testimonials" id="testimonianze" aria-labelledby="testi-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Cosa dicono i clienti</p>
+          <h2 id="testi-title" class="section-title">Fiducia guadagnata,<br /><span style="color:var(--primary)">intervento dopo intervento</span></h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card reveal">
+            <div class="testi-stars" aria-label="5 stelle su 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <p class="testi-text">«Portato il mio Audi A4 per una spia motore inspiegabile. Diagnosi precisa in meno di un'ora, preventivo chiaro e riparazione completata il giorno dopo. Professionalità vera.»</p>
+            <footer class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">M</div>
+              <div>
+                <cite class="testi-name">Marco V.</cite>
+                <span class="testi-car">Audi A4 · Montesilvano</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal reveal-delay-1">
+            <div class="testi-stars" aria-label="5 stelle su 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <p class="testi-text">«Finalmente un'officina dove spiegano tutto prima di procedere. Ho portato la Golf per il tagliando e ho ricevuto un resoconto completo. Nessuna spesa a sorpresa.»</p>
+            <footer class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">L</div>
+              <div>
+                <cite class="testi-name">Laura C.</cite>
+                <span class="testi-car">Volkswagen Golf · Pescara</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal reveal-delay-2">
+            <div class="testi-stars" aria-label="5 stelle su 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <p class="testi-text">«Il cambio automatico della mia BMW serie 3 era in avaria. In molte officine mi hanno detto di cambiarlo. Alex l'ha revisionato e funziona perfettamente. Risparmio significativo e fiducia ritrovata.»</p>
+            <footer class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">G</div>
+              <div>
+                <cite class="testi-name">Giuseppe R.</cite>
+                <span class="testi-car">BMW Serie 3 · Spoltore</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section-faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq-inner">
+          <div class="faq-header reveal">
+            <p class="section-eyebrow">Domande frequenti</p>
+            <h2 id="faq-title" class="section-title">Risposte dirette.<br /><span style="color:var(--primary)">Nessun tecnicismo inutile.</span></h2>
+          </div>
+          <div class="faq-list reveal reveal-delay-1">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Devo prenotare o posso venire direttamente?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>È preferibile chiamare al <a href="tel:+393206403331">320 640 3331</a> per concordare un orario. Garantisce tempi di attesa minimi e la disponibilità dell'attrezzatura necessaria.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Il tagliando viene registrato sul libretto?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Sì. Ogni tagliando viene documentato sul libretto di manutenzione e registrato nei nostri archivi. La storia del veicolo è sempre tracciabile.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Utilizzate ricambi originali o aftermarket?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Utilizziamo ricambi originali OEM o ricambi aftermarket equivalenti con certificazione OE. La scelta viene concordata con il cliente prima dell'intervento, insieme al preventivo.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Assistite anche veicoli ibridi o elettrici?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Assistiamo veicoli ibridi. Per i veicoli 100% elettrici contattaci direttamente per verificare la compatibilità con il tipo di intervento richiesto.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Fornite un preventivo prima di iniziare i lavori?</span>
+                <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Sempre. Nessun intervento viene avviato senza preventivo scritto approvato dal cliente. È la nostra politica senza eccezioni.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         FINAL CTA
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section-cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-block reveal">
+          <div class="cta-glow" aria-hidden="true"></div>
+          <p class="section-eyebrow" style="color:var(--on-primary-container)">Pronto a iniziare?</p>
+          <h2 id="cta-title" class="cta-headline">Porta la tua auto.<br />Ti diciamo la verità.</h2>
+          <p class="cta-body">Nessuna spia dovrebbe restare accesa senza una spiegazione chiara. Prenota una diagnosi — preventivo scritto, nessun impegno.</p>
+          <div class="cta-actions">
+            <a href="tel:+393206403331" class="btn btn-emergency btn-lg" aria-label="Chiama 320 640 3331">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              320 640 3331
+            </a>
+            <a href="#contatti" class="btn btn-ghost btn-lg">
+              Come raggiungerci
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section-contact" id="contatti" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Dove siamo</p>
+          <h2 id="contact-title" class="section-title">Siamo a Montesilvano,<br /><span style="color:var(--primary)">a 5 minuti dall'autostrada.</span></h2>
+          <p class="section-subtitle">Parcheggio comodo, nessuna fila. Chiamaci per concordare l'orario e trovare subito disponibilità.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="contact-card">
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-label">Telefono</p>
+                  <a href="tel:+393206403331" class="contact-value">320 640 3331</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-label">Email / PEC</p>
+                  <a href="mailto:russu1990@pec.it" class="contact-value">russu1990@pec.it</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="contact-label">Indirizzo</p>
+                  <address class="contact-value" style="font-style:normal">
+                    Via A. Vespucci, 16<br />
+                    65015 Montesilvano (PE)
+                  </address>
+                </div>
+              </div>
+            </div>
+
+            <div class="hours-card">
+              <h3 class="hours-title">Orari di apertura</h3>
+              <div class="hours-grid">
+                <div class="hours-row">
+                  <span class="hours-day">Lunedì – Venerdì</span>
+                  <span class="hours-time">08:30 – 12:30 · 14:30 – 18:30</span>
+                </div>
+                <div class="hours-row">
+                  <span class="hours-day">Sabato</span>
+                  <span class="hours-time">08:30 – 12:30</span>
+                </div>
+                <div class="hours-row hours-row-closed">
+                  <span class="hours-day">Domenica</span>
+                  <span class="hours-time hours-closed">Chiuso</span>
+                </div>
+              </div>
+              <p class="hours-note">Per urgenze al di fuori degli orari, chiamare direttamente.</p>
+            </div>
+          </div>
+
+          <div class="map-container reveal reveal-delay-1">
+            <div class="map-placeholder" role="img" aria-label="Mappa: Via A. Vespucci 16, Montesilvano">
+              <div class="map-inner">
+                <div class="map-pin" aria-hidden="true">
+                  <svg width="32" height="40" viewBox="0 0 32 40" fill="none">
+                    <path d="M16 0C7.163 0 0 7.163 0 16c0 10.5 14 24 16 24s16-13.5 16-24C32 7.163 24.837 0 16 0z" fill="#004AAD"/>
+                    <circle cx="16" cy="16" r="6" fill="#d9e2ff"/>
+                  </svg>
+                </div>
+                <p class="map-address">Via A. Vespucci, 16<br />65015 Montesilvano (PE)</p>
+                <a href="https://maps.google.com/?q=Via+A.+Vespucci+16+Montesilvano+PE" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  Apri in Google Maps
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         CONTACT FORM
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section-form" id="preventivo" aria-labelledby="form-title">
+      <div class="container">
+        <div class="form-block reveal">
+          <div class="form-header">
+            <p class="section-eyebrow">Scrivici</p>
+            <h2 id="form-title" class="section-title">Descrivimi il problema.<br /><span style="color:var(--primary)">Ci pensiamo noi.</span></h2>
+            <p class="section-subtitle">Rispondiamo entro poche ore. Nessun impegno, nessuna sorpresa.</p>
+          </div>
+          <!-- Sostituisci l'action con il tuo endpoint Formspree: https://formspree.io -->
+          <form class="contact-form" action="mailto:russu1990@pec.it" method="GET" enctype="text/plain" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cf-name">Nome e cognome <span aria-hidden="true">*</span></label>
+                <input type="text" id="cf-name" name="nome" placeholder="Mario Rossi" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="cf-phone">Telefono <span aria-hidden="true">*</span></label>
+                <input type="tel" id="cf-phone" name="telefono" placeholder="320 123 4567" autocomplete="tel" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" placeholder="mario@email.it" autocomplete="email" />
+              </div>
+              <div class="form-field">
+                <label for="cf-service">Tipo di intervento</label>
+                <select id="cf-service" name="servizio">
+                  <option value="">Seleziona un servizio…</option>
+                  <option>Diagnosi Elettronica</option>
+                  <option>Tagliando</option>
+                  <option>Freni e Sospensioni</option>
+                  <option>Aria Condizionata</option>
+                  <option>Cambio Automatico</option>
+                  <option>Elettrauto</option>
+                  <option>Pneumatici</option>
+                  <option>Revisione Ministeriale</option>
+                  <option>Altro</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="cf-message">Descrivi brevemente</label>
+              <textarea id="cf-message" name="messaggio" rows="4" placeholder="Es: La spia del motore è accesa da ieri mattina, la macchina tira leggermente a destra e sento un rumore sordo in frenata…"></textarea>
+            </div>
+            <div class="form-footer">
+              <p class="form-privacy">Inviando il modulo accetti il trattamento dei dati ai sensi del GDPR 679/2016. I tuoi dati non vengono ceduti a terzi.</p>
+              <button type="submit" class="btn btn-primary btn-lg">
+                Invia richiesta
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" aria-label="Alex Car Service">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect width="36" height="36" rx="6" fill="#004AAD"/>
+            <path d="M7 22l3-8h16l3 8H7z" stroke="#d9e2ff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+            <circle cx="11" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
+            <circle cx="25" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
+          </svg>
+          <span class="nav-logo-text">
+            <span class="nav-logo-main">Alex Car Service</span>
+            <span class="nav-logo-sub">di Russu Oleksandr</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Officina multimarca a Montesilvano dal 2010. Diagnosi precisa, preventivo scritto, nessuna sorpresa in fattura.</p>
+      </div>
+
+      <div class="footer-links">
+        <nav aria-label="Link footer">
+          <a href="#servizi" class="footer-link">Servizi</a>
+          <a href="#perche-noi" class="footer-link">Perché Noi</a>
+          <a href="#faq" class="footer-link">FAQ</a>
+          <a href="#contatti" class="footer-link">Contatti</a>
+          <a href="#preventivo" class="footer-link">Richiedi preventivo</a>
+        </nav>
+      </div>
+
+      <div class="footer-legal">
+        <p>P.IVA 02859570695 · C.F. RSSLSN90M23Z138N</p>
+        <p>Cod. univoco SDI: M5UXCR1</p>
+        <p class="footer-copy">© <span id="year"></span> Alex Car Service. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

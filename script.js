@@ -18,13 +18,9 @@
   if (navHeader) {
     if (heroWrapper && 'IntersectionObserver' in window) {
       new IntersectionObserver(
-        ([entry]) => navHeader.classList.toggle('scrolled', !entry.isIntersecting),
+        ([entry]) => navHeader.classList.toggle('scrolled', !entry.isIntersecting) && document.body.classList.toggle('no-scroll', entry.isIntersecting),
         { threshold: .3 }
       ).observe(heroWrapper);
-      new IntersectionObserver(
-        ([entry]) => document.body.classList.toggle('no-scroll', !entry.isIntersecting),
-        { threshold: 0, rootMargin: '0px 0px 0px 0px' }
-      ).observe(serviziSection);
     } else {
       // Fallback: use hero wrapper height, or viewport height if wrapper not found
       const getThreshold = () => heroWrapper
@@ -293,6 +289,7 @@
     }
 
     function animateHero(from, to) {
+      document.body.classList.add('no-scroll');
       if (rafId) cancelAnimationFrame(rafId);
       state = 'animating';
       const startTime = performance.now();
@@ -320,6 +317,7 @@
         window.scrollTo(0, to === 1 ? bounds.wBottom : bounds.wTop);
 
         if (to === 0 && scrollCue) scrollCue.classList.remove('hidden');
+        if (to === 1) document.body.classList.remove('no-scroll');
       }
 
       rafId = requestAnimationFrame(tick);

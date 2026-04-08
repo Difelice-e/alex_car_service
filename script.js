@@ -159,10 +159,10 @@
     });
   });
 
-  // ─── Scroll-driven video hero (spring-based momentum) ───
+  // ─── Scroll-driven canvas-frame hero (spring-based momentum) ───
   (function () {
     const wrapper     = document.querySelector('.hero-scroll-wrapper');
-    const video       = document.getElementById('hero-video');
+    const canvas      = document.getElementById('hero-canvas');
     const heroContent = document.querySelector('.hero-content');
     const heroVisual  = document.querySelector('.hero-visual');
     const heroStats   = document.querySelector('.hero-stat-strip');
@@ -172,7 +172,48 @@
     const diagCard    = document.getElementById('diag-card');
     const heroClaim   = document.getElementById('hero-claim');
 
-    if (!wrapper || !video) return;
+    if (!wrapper || !canvas) return;
+
+    // ─── Frame preloader ───
+    const FRAME_COUNT = 121;
+    const FRAME_BASE  = 'brand_assets/frames/ezgif-frame-';
+    const frames      = new Array(FRAME_COUNT);
+    const ctx         = canvas.getContext('2d');
+    let   currentProg = 0;
+
+    function resizeCanvas() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      drawFrame(currentProg);
+    }
+
+    function drawFrame(p) {
+      const idx = Math.round(p * (FRAME_COUNT - 1));
+      const img = frames[idx];
+      if (!img || !img.complete || !img.naturalWidth) return;
+      const cw = canvas.width, ch = canvas.height;
+      const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+      const w = img.naturalWidth  * scale;
+      const h = img.naturalHeight * scale;
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+    }
+
+    function preloadFrames() {
+      for (let i = 0; i < FRAME_COUNT; i++) {
+        const img = new Image();
+        const num = String(i + 1).padStart(3, '0');
+        img.src = FRAME_BASE + num + '.jpg';
+        img.onload = function () {
+          if (i === 0) { resizeCanvas(); } // draw first frame as soon as ready
+        };
+        frames[i] = img;
+      }
+    }
+
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+    preloadFrames();
+    resizeCanvas();
 
     // ─── Diagnostic card config ───
     const DIAG_ITEMS = [
@@ -217,9 +258,7 @@
     function applyProgress(p) {
       p = Math.max(0, Math.min(1, p));
 
-      if (video.readyState >= 2 && video.duration > 0) {
-        video.currentTime = p * video.duration;
-      }
+      drawFrame(p);
 
       // Content fades — hero text exits first, card stays through full scroll
       const contentOpacity = Math.max(0, 1 - p / 0.65);
@@ -251,24 +290,18 @@
       updateDiagCard(p);
     }
 
-    // Reduced-motion: jump to final state, autoplay loop
+    // Reduced-motion: jump to final state immediately
     if (prefersReducedMotion) {
       applyProgress(1);
-      video.setAttribute('autoplay', '');
-      video.setAttribute('loop', '');
-      video.play().catch(function () {});
       return;
     }
-
-    video.pause();
 
     // ─── State machine ───
     // 'idle'      → at progress 0, waiting for scroll-down
     // 'animating' → programmatic transition running
     // 'complete'  → at progress 1, waiting for scroll-up
-    let state       = 'idle';
-    let currentProg = 0;
-    let rafId       = null;
+    let state = 'idle';
+    let rafId = null;
 
     const ANIM_DURATION = 4000; // ms, matches video length
 
@@ -389,24 +422,63 @@
       }
     }());
 
-    // Fallback: if video fails, autoplay loop
-    video.addEventListener('error', function () {
-      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-      window.removeEventListener('wheel',      onWheel);
-      window.removeEventListener('touchmove',  onTouchMove);
-      window.removeEventListener('keydown',    onKeyDown);
-      if (heroContent) heroContent.style.opacity = '';
-      if (heroVisual)  heroVisual.style.transform  = '';
-      if (scrollCue)   scrollCue.style.opacity   = '';
-      if (heroStats)   heroStats.style.opacity   = '';
-      if (overlay)     overlay.style.background  = '';
-      if (scanFill)    scanFill.style.width       = '100%';
-      if (diagCard)    diagCard.style.opacity     = '0';
-      if (heroClaim)   heroClaim.style.opacity    = '1';
-      applyProgress(1);
-      video.setAttribute('autoplay', '');
-      video.setAttribute('loop', '');
-      video.play().catch(function () {});
+  }());
+
+  // ─── Contact form: validation + Formspree AJAX ───
+  (function () {
+    const form      = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('cf-submit');
+    const successEl = document.getElementById('form-success');
+    if (!form || !submitBtn || !successEl) return;
+
+    const nameInput    = document.getElementById('cf-name');
+    const phoneInput   = document.getElementById('cf-phone');
+    const privacyCheck = document.getElementById('cf-privacy');
+
+    function isValid() {
+      return nameInput.value.trim() !== '' &&
+             phoneInput.value.trim() !== '' &&
+             privacyCheck.checked;
+    }
+
+    function updateSubmit() {
+      const valid = isValid();
+      submitBtn.disabled = !valid;
+      submitBtn.setAttribute('aria-disabled', String(!valid));
+    }
+
+    [nameInput, phoneInput, privacyCheck].forEach(el => {
+      el.addEventListener('input', updateSubmit);
+      el.addEventListener('change', updateSubmit);
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!isValid()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Invio in corso…';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.hidden = true;
+            successEl.hidden = false;
+          } else {
+            return res.json().then(function (data) {
+              throw new Error(data.error || 'Errore di invio');
+            });
+          }
+        })
+        .catch(function (err) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Invia richiesta <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+          alert('Si è verificato un errore: ' + err.message + '\nRiprova o contattaci telefonicamente.');
+        });
     });
   }());
 

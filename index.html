@@ -21,18 +21,7 @@
   <header class="nav-header" id="nav-header" role="banner">
     <div class="container nav-inner">
       <a href="#" class="nav-logo" aria-label="Alex Car Service – torna all'inizio">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true" focusable="false">
-          <rect width="36" height="36" rx="6" fill="#004AAD"/>
-          <path d="M7 22l3-8h16l3 8H7z" stroke="#d9e2ff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
-          <circle cx="11" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
-          <circle cx="25" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
-          <path d="M10 18l2-4h12l2 4" stroke="#b0c6ff" stroke-width="1" fill="none"/>
-          <path d="M24 13l3-3M24 13l1.5-4" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <span class="nav-logo-text">
-          <span class="nav-logo-main">Alex Car Service</span>
-          <span class="nav-logo-sub">Officina Multimarca</span>
-        </span>
+        <img src="imgs/logo.png" alt="Alex Car Service" class="nav-logo-img" width="120" height="48" />
       </a>
 
       <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navigazione principale">
@@ -74,16 +63,7 @@
     <div class="hero-scroll-wrapper">
     <section class="hero" aria-labelledby="hero-headline">
       <div class="hero-bg" aria-hidden="true">
-        <video
-          id="hero-video"
-          class="hero-video"
-          preload="auto"
-          muted
-          playsinline
-          aria-hidden="true"
-        >
-          <source src="brand_assets/output.mp4" type="video/mp4" />
-        </video>
+        <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero-video-overlay"></div>
         <div class="hero-grid"></div>
         <div class="hero-glow hero-glow-1"></div>
@@ -713,23 +693,17 @@
           </div>
 
           <div class="map-container reveal reveal-delay-1">
-            <div class="map-placeholder" role="img" aria-label="Mappa: Via A. Vespucci 16, Montesilvano">
-              <div class="map-inner">
-                <div class="map-pin" aria-hidden="true">
-                  <svg width="32" height="40" viewBox="0 0 32 40" fill="none">
-                    <path d="M16 0C7.163 0 0 7.163 0 16c0 10.5 14 24 16 24s16-13.5 16-24C32 7.163 24.837 0 16 0z" fill="#004AAD"/>
-                    <circle cx="16" cy="16" r="6" fill="#d9e2ff"/>
-                  </svg>
-                </div>
-                <p class="map-address">Via A. Vespucci, 16<br />65015 Montesilvano (PE)</p>
-                <a href="https://maps.google.com/?q=Via+A.+Vespucci+16+Montesilvano+PE" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                  Apri in Google Maps
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
+            <iframe
+              class="map-iframe"
+              src="https://maps.google.com/maps?q=Via+A.+Vespucci+16,+Montesilvano+PE&output=embed&hl=it"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Posizione Alex Car Service – Via A. Vespucci 16, Montesilvano"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -746,8 +720,8 @@
           <p class="section-subtitle">Rispondiamo entro poche ore. Nessun impegno, nessuna sorpresa.</p>
         </div>
         <div class="form-block reveal">
-          <!-- Sostituisci l'action con il tuo endpoint Formspree: https://formspree.io -->
-          <form class="contact-form" action="mailto:russu1990@pec.it" method="GET" enctype="text/plain" novalidate>
+          <!-- Sostituisci PLACEHOLDER_FORMSPREE_ID con il tuo ID da https://formspree.io -->
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/PLACEHOLDER_FORMSPREE_ID" method="POST" novalidate>
             <div class="form-row">
               <div class="form-field">
                 <label for="cf-name">Nome e cognome <span aria-hidden="true">*</span></label>
@@ -783,9 +757,14 @@
               <label for="cf-message">Descrivi brevemente</label>
               <textarea id="cf-message" name="messaggio" rows="4" placeholder="Es: La spia del motore è accesa da ieri mattina, la macchina tira leggermente a destra e sento un rumore sordo in frenata…"></textarea>
             </div>
+            <div class="form-field">
+              <label class="checkbox-label">
+                <input type="checkbox" id="cf-privacy" name="privacy" required />
+                <span>Ho letto e accetto il trattamento dei dati personali ai sensi del <abbr title="Regolamento UE 2016/679">Regolamento UE 2016/679 (GDPR)</abbr>. <span class="required-star" aria-hidden="true">*</span></span>
+              </label>
+            </div>
             <div class="form-footer">
-              <p class="form-privacy">Inviando il modulo accetti il trattamento dei dati ai sensi del GDPR 679/2016. I tuoi dati non vengono ceduti a terzi.</p>
-              <button type="submit" class="btn btn-primary btn-lg">
+              <button type="submit" id="cf-submit" class="btn btn-primary btn-lg" disabled aria-disabled="true">
                 Invia richiesta
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -793,6 +772,16 @@
               </button>
             </div>
           </form>
+
+          <div id="form-success" class="form-success" hidden aria-live="polite">
+            <svg class="form-success-icon" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <circle cx="32" cy="32" r="32" fill="rgba(16,185,129,0.12)"/>
+              <circle cx="32" cy="32" r="22" fill="rgba(16,185,129,0.18)"/>
+              <path d="M21 32l8 8 14-16" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <p class="form-success-title">Richiesta inviata!</p>
+            <p class="form-success-text">Ti ricontatteremo entro poche ore. A presto!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -811,16 +800,7 @@
         <!-- Brand column -->
         <div class="footer-brand">
           <a href="#" class="nav-logo footer-logo" aria-label="Alex Car Service">
-            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <rect width="36" height="36" rx="6" fill="#004AAD"/>
-              <path d="M7 22l3-8h16l3 8H7z" stroke="#d9e2ff" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
-              <circle cx="11" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
-              <circle cx="25" cy="24" r="2.5" stroke="#d9e2ff" stroke-width="1.5" fill="none"/>
-            </svg>
-            <span class="nav-logo-text">
-              <span class="nav-logo-main">Alex Car Service</span>
-              <span class="nav-logo-sub">di Russu Oleksandr</span>
-            </span>
+            <img src="imgs/logo.png" alt="Alex Car Service" class="footer-logo-img" width="160" height="64" />
           </a>
           <p class="footer-tagline">Officina multimarca a Montesilvano dal 2010. Diagnostica professionale, preventivo scritto prima di ogni intervento, garanzia sui lavori eseguiti.</p>
 
@@ -909,6 +889,13 @@
 
     </div><!-- /container -->
   </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/393206403331" class="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="Contattaci su WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.736 5.476 2.027 7.779L0 32l8.467-2.003A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.265 13.265 0 01-6.768-1.847l-.484-.288-5.026 1.188 1.213-4.898-.317-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.273-9.92c-.397-.199-2.352-1.16-2.717-1.292-.364-.133-.629-.199-.894.199-.266.397-1.028 1.292-1.26 1.558-.232.266-.464.299-.861.1-.397-.199-1.676-.617-3.192-1.97-1.18-1.051-1.977-2.35-2.209-2.747-.232-.397-.025-.611.174-.809.179-.178.397-.464.596-.696.199-.232.265-.397.397-.663.133-.265.066-.497-.033-.696-.1-.199-.894-2.155-1.226-2.95-.322-.773-.65-.668-.894-.68l-.762-.013c-.265 0-.696.1-1.061.497-.364.397-1.393 1.36-1.393 3.316 0 1.956 1.426 3.845 1.625 4.11.199.265 2.806 4.283 6.799 6.006.95.41 1.692.655 2.27.838.954.303 1.822.26 2.508.158.765-.114 2.352-.961 2.684-1.89.332-.928.332-1.724.232-1.89-.099-.166-.364-.265-.762-.464z"/>
+    </svg>
+  </a>
 
   <script src="script.js"></script>
 </body>

@@ -9,8 +9,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="brand_assets/frames/ezgif-frame-001.jpg" as="image" fetchpriority="high" />
+  <script src="script.js" defer></script>
 </head>
 <body class="no-scroll">
+<noscript><style>body { overflow: auto !important; }</style></noscript>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PAGE LOADER
+  ═══════════════════════════════════════════════════════ -->
+  <div id="page-loader" class="page-loader" aria-hidden="true" role="presentation">
+    <div class="loader-inner">
+      <img src="imgs/logo.png" alt="" class="loader-logo" width="120" height="48" />
+      <p class="loader-brand">Alex Car Service</p>
+      <div class="loader-bar-track" aria-hidden="true">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Skip to content -->
   <a href="#main" class="skip-link">Vai al contenuto</a>
@@ -101,8 +117,8 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal reveal-delay-1" aria-hidden="true">
-          <div class="hero-card" id="diag-card">
+        <div class="hero-visual reveal reveal-delay-1">
+          <div class="hero-card" id="diag-card" aria-hidden="true">
             <div class="hero-card-header">
               <div class="diag-obd-label">
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M8 11v2M12 11v2M16 11v2"/><path d="M5 7V5a2 2 0 012-2h10a2 2 0 012 2v2"/></svg>
@@ -172,7 +188,7 @@
         <div class="scroll-line"></div>
       </div>
 
-      <div class="hero-claim" id="hero-claim" aria-hidden="true">
+      <div class="hero-claim" id="hero-claim" aria-live="polite">
         <p class="hero-claim-eyebrow">Officina multimarca · Montesilvano</p>
         <p class="hero-claim-text">Diagnosi che non mentono.</p>
       </div>
@@ -190,6 +206,8 @@
           <p class="section-subtitle">Ogni marca, ogni modello, ogni anno di immatricolazione. Interventi documentati e garantiti.</p>
         </div>
 
+        <p class="services-guide reveal">Non sai da dove partire? La <strong>diagnosi elettronica</strong> legge i codici di errore e indica quale intervento è necessario — è il punto di partenza per qualsiasi anomalia.</p>
+
         <div class="services-grid">
           <!-- Diagnosi Elettronica -->
           <article class="service-card reveal" aria-labelledby="svc-diagnosi">
@@ -205,7 +223,7 @@
                 <h3 id="svc-diagnosi" class="service-title">Diagnosi Elettronica</h3>
                 <p class="service-desc">Lettura completa dei codici di errore con strumentazione OBD2 professionale. Analisi precisa, referto scritto.</p>
               </div>
-              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Servizio disponibile" role="img"></span>
             </div>
           </article>
 
@@ -221,7 +239,7 @@
                 <h3 id="svc-tagliandi" class="service-title">Tagliandi Multimarca</h3>
                 <p class="service-desc">Tagliandi secondo le specifiche del costruttore per ogni marca. Ricambi originali o equivalenti certificati.</p>
               </div>
-              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Servizio disponibile" role="img"></span>
             </div>
           </article>
 
@@ -237,7 +255,7 @@
                 <h3 id="svc-clima" class="service-title">Aria Condizionata</h3>
                 <p class="service-desc">D'estate soffoca, d'inverno appanna. Ricarica, sanificazione e revisione del climatizzatore. Gas certificato R134a e R1234yf.</p>
               </div>
-              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Servizio disponibile" role="img"></span>
             </div>
           </article>
 
@@ -254,7 +272,7 @@
                 <h3 id="svc-cambi" class="service-title">Cambi Automatici</h3>
                 <p class="service-desc">Prima di cambiarlo, lasciaci esaminarlo. Revisione e riparazione di cambi automatici, DSG e CVT. Spesso si ripara — con un risparmio significativo.</p>
               </div>
-              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Servizio disponibile" role="img"></span>
             </div>
           </article>
 
@@ -270,7 +288,7 @@
                 <h3 id="svc-elettrauto" class="service-title">Elettrauto</h3>
                 <p class="service-desc">Impianti elettrici, alternatori, motorini di avviamento e centraline. Guasto elettrico? Lo troviamo con strumentazione professionale, non a tentativi.</p>
               </div>
-              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Servizio disponibile" role="img"></span>
             </div>
           </article>
 
@@ -288,7 +306,7 @@
                 <h3 id="svc-freni" class="service-title">Freni e Sospensioni</h3>
                 <p class="service-desc">Sostituzione pastiglie, dischi, pinze e revisione delle sospensioni. Sicurezza verificata strumentalmente.</p>
               </div>
-              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Servizio disponibile" role="img"></span>
             </div>
           </article>
 
@@ -301,10 +319,10 @@
                 </svg>
               </div>
               <div class="service-content">
-                <h3 id="svc-revisioni" class="service-title">Revisioni</h3>
-                <p class="service-desc">Niente sorprese allo sportello. Controllo completo prima dell'appuntamento in modo che la revisione ministeriale non sia mai un problema.</p>
+                <h3 id="svc-revisioni" class="service-title">Revisioni & Pre-revisioni</h3>
+                <p class="service-desc">Niente sorprese allo sportello. Controllo completo pre-revisione per arrivare all'appuntamento ministeriale già pronti, senza rischi di bocciatura.</p>
               </div>
-              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Servizio disponibile" role="img"></span>
             </div>
           </article>
 
@@ -322,7 +340,7 @@
                 <h3 id="svc-pneumatici" class="service-title">Pneumatici</h3>
                 <p class="service-desc">Montaggio, equilibratura e convergenza. Fornitura di pneumatici per tutte le stagioni e ogni budget.</p>
               </div>
-              <span class="status-dot status-ok" title="Disponibile" aria-label="Disponibile"></span>
+              <span class="status-dot status-ok" title="Disponibile" aria-label="Servizio disponibile" role="img"></span>
             </div>
           </article>
         </div>
@@ -343,7 +361,7 @@
             <div class="pillars-list">
               <div class="pillar">
                 <div class="pillar-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   </svg>
                 </div>
@@ -355,7 +373,7 @@
 
               <div class="pillar">
                 <div class="pillar-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
                   </svg>
                 </div>
@@ -367,7 +385,7 @@
 
               <div class="pillar">
                 <div class="pillar-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
                   </svg>
                 </div>
@@ -379,7 +397,7 @@
 
               <div class="pillar">
                 <div class="pillar-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
                     <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
                   </svg>
@@ -426,7 +444,7 @@
                 </div>
               </div>
               <div class="spec-footer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
                 </svg>
                 <span class="label-sm" style="color:var(--on-surface-variant)">Analisi completata — 1 attenzione rilevata</span>
@@ -435,82 +453,25 @@
 
             <div class="cert-strip">
               <div class="cert-badge">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4c5a0" stroke-width="1.5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                   <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
                 </svg>
                 <span>Tecnici certificati</span>
               </div>
               <div class="cert-badge">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4c5a0" stroke-width="1.5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
                 <span>Garanzia lavori</span>
               </div>
               <div class="cert-badge">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4c5a0" stroke-width="1.5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                   <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
                 </svg>
                 <span>Preventivo scritto</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════
-         TESTIMONIALS
-    ═══════════════════════════════════════════════════════ -->
-    <section class="section section-testimonials" id="testimonianze" aria-labelledby="testi-title">
-      <div class="container">
-        <div class="section-header centered reveal">
-          <p class="section-eyebrow">Cosa dicono i clienti</p>
-          <h2 id="testi-title" class="section-title">Fiducia guadagnata,<br /><span style="color:var(--primary)">intervento dopo intervento</span></h2>
-          <p class="section-subtitle">Recensioni verificate da clienti reali nella zona di Montesilvano e Pescara.</p>
-        </div>
-
-        <div class="testimonials-grid">
-          <blockquote class="testimonial-card reveal">
-            <div class="testi-stars" aria-label="5 stelle su 5">
-              <span aria-hidden="true">★★★★★</span>
-            </div>
-            <p class="testi-text">«Portato il mio Audi A4 per una spia motore inspiegabile. Diagnosi precisa in meno di un'ora, preventivo chiaro e riparazione completata il giorno dopo. Professionalità vera.»</p>
-            <footer class="testi-author">
-              <div class="testi-avatar" aria-hidden="true">M</div>
-              <div>
-                <cite class="testi-name">Marco V.</cite>
-                <span class="testi-car">Audi A4 · Montesilvano</span>
-              </div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial-card reveal reveal-delay-3">
-            <div class="testi-stars" aria-label="5 stelle su 5">
-              <span aria-hidden="true">★★★★★</span>
-            </div>
-            <p class="testi-text">«Finalmente un'officina dove spiegano tutto prima di procedere. Ho portato la Golf per il tagliando e ho ricevuto un resoconto completo. Nessuna spesa a sorpresa.»</p>
-            <footer class="testi-author">
-              <div class="testi-avatar" aria-hidden="true">L</div>
-              <div>
-                <cite class="testi-name">Laura C.</cite>
-                <span class="testi-car">Volkswagen Golf · Pescara</span>
-              </div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial-card reveal reveal-delay-4">
-            <div class="testi-stars" aria-label="5 stelle su 5">
-              <span aria-hidden="true">★★★★★</span>
-            </div>
-            <p class="testi-text">«Il cambio automatico della mia BMW serie 3 era in avaria. In molte officine mi hanno detto di cambiarlo. Alex l'ha revisionato e funziona perfettamente. Risparmio significativo e fiducia ritrovata.»</p>
-            <footer class="testi-author">
-              <div class="testi-avatar" aria-hidden="true">G</div>
-              <div>
-                <cite class="testi-name">Giuseppe R.</cite>
-                <span class="testi-car">BMW Serie 3 · Spoltore</span>
-              </div>
-            </footer>
-          </blockquote>
         </div>
       </div>
     </section>
@@ -524,6 +485,15 @@
           <div class="faq-header reveal">
             <p class="section-eyebrow">Domande frequenti</p>
             <h2 id="faq-title" class="section-title">Risposte dirette.<br /><span style="color:var(--primary)">Nessun tecnicismo inutile.</span></h2>
+            <div class="faq-cta">
+              <p class="faq-cta-note">Hai un dubbio che non trovi qui sotto? Chiamaci — risposta diretta dal tecnico.</p>
+              <a href="#preventivo" class="btn btn-secondary btn-sm">
+                Richiedi preventivo
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
           </div>
           <div class="faq-list reveal reveal-delay-1">
             <details class="faq-item">
@@ -591,6 +561,63 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section-testimonials" id="testimonianze" aria-labelledby="testi-title">
+      <div class="container">
+        <div class="section-header centered reveal">
+          <p class="section-eyebrow">Cosa dicono i clienti</p>
+          <h2 id="testi-title" class="section-title">Fiducia guadagnata,<br /><span style="color:var(--primary)">intervento dopo intervento</span></h2>
+          <p class="section-subtitle">Recensioni verificate da clienti reali nella zona di Montesilvano e Pescara.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card reveal">
+            <div class="testi-stars" aria-label="5 stelle su 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <p class="testi-text">«Portato il mio Audi A4 per una spia motore inspiegabile. Diagnosi precisa in meno di un'ora, preventivo chiaro e riparazione completata il giorno dopo. Professionalità vera.»</p>
+            <footer class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">M</div>
+              <div>
+                <cite class="testi-name">Marco V.</cite>
+                <span class="testi-car">Audi A4 · Montesilvano</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal reveal-delay-3">
+            <div class="testi-stars" aria-label="5 stelle su 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <p class="testi-text">«Finalmente un'officina dove spiegano tutto prima di procedere. Ho portato la Golf per il tagliando e ho ricevuto un resoconto completo. Nessuna spesa a sorpresa.»</p>
+            <footer class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">L</div>
+              <div>
+                <cite class="testi-name">Laura C.</cite>
+                <span class="testi-car">Volkswagen Golf · Pescara</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal reveal-delay-4">
+            <div class="testi-stars" aria-label="5 stelle su 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+            <p class="testi-text">«Il cambio automatico della mia BMW serie 3 era in avaria. In molte officine mi hanno detto di cambiarlo. Alex l'ha revisionato e funziona perfettamente. Risparmio significativo e fiducia ritrovata.»</p>
+            <footer class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">G</div>
+              <div>
+                <cite class="testi-name">Giuseppe R.</cite>
+                <span class="testi-car">BMW Serie 3 · Spoltore</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
          FINAL CTA
     ═══════════════════════════════════════════════════════ -->
     <section class="section section-cta" aria-labelledby="cta-title">
@@ -634,7 +661,7 @@
             <div class="contact-card">
               <div class="contact-item">
                 <div class="contact-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                   </svg>
                 </div>
@@ -646,19 +673,19 @@
 
               <div class="contact-item">
                 <div class="contact-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>
                   </svg>
                 </div>
                 <div>
-                  <p class="contact-label">Email / PEC</p>
-                  <a href="mailto:russu1990@pec.it" class="contact-value">russu1990@pec.it</a>
+                  <p class="contact-label">Email</p>
+                  <a href="mailto:info.alexcarservice@gmail.com" class="contact-value">info.alexcarservice@gmail.com</a>
                 </div>
               </div>
 
               <div class="contact-item">
                 <div class="contact-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0c6ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
                   </svg>
                 </div>
@@ -676,12 +703,8 @@
               <h3 class="hours-title">Orari di apertura</h3>
               <div class="hours-grid">
                 <div class="hours-row">
-                  <span class="hours-day">Lunedì – Venerdì</span>
-                  <span class="hours-time">08:30 – 12:30 · 14:30 – 18:30</span>
-                </div>
-                <div class="hours-row">
-                  <span class="hours-day">Sabato</span>
-                  <span class="hours-time">08:30 – 12:30</span>
+                  <span class="hours-day">Lunedì – Sabato</span>
+                  <span class="hours-time">08:30 – 19:30</span>
                 </div>
                 <div class="hours-row hours-row-closed">
                   <span class="hours-day">Domenica</span>
@@ -703,7 +726,19 @@
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Posizione Alex Car Service – Via A. Vespucci 16, Montesilvano"
+              id="map-iframe"
             ></iframe>
+            <div class="map-placeholder" id="map-fallback" hidden aria-hidden="true">
+              <div class="map-inner">
+                <svg class="map-pin" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <p class="map-address">Via A. Vespucci, 16<br />65015 Montesilvano (PE)</p>
+                <a href="https://maps.google.com/?q=Via+A.+Vespucci+16+Montesilvano+PE" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  Apri in Google Maps
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -723,45 +758,48 @@
           <!-- Sostituisci PLACEHOLDER_FORMSPREE_ID con il tuo ID da https://formspree.io -->
           <form id="contact-form" class="contact-form" action="https://formspree.io/f/PLACEHOLDER_FORMSPREE_ID" method="POST" novalidate>
             <div class="form-row">
-              <div class="form-field">
-                <label for="cf-name">Nome e cognome <span aria-hidden="true">*</span></label>
-                <input type="text" id="cf-name" name="nome" placeholder="Mario Rossi" autocomplete="name" required />
+              <div class="form-field" id="ff-name">
+                <label for="cf-name">Nome e cognome <span class="required-star" aria-hidden="true">*</span></label>
+                <input type="text" id="cf-name" name="nome" placeholder="Mario Rossi" autocomplete="name" required maxlength="100" aria-describedby="err-name" />
+                <span class="field-error-msg" id="err-name" role="alert" aria-hidden="true">Inserisci il tuo nome</span>
               </div>
-              <div class="form-field">
-                <label for="cf-phone">Telefono <span aria-hidden="true">*</span></label>
-                <input type="tel" id="cf-phone" name="telefono" placeholder="320 123 4567" autocomplete="tel" required />
+              <div class="form-field" id="ff-phone">
+                <label for="cf-phone">Telefono <span class="required-star" aria-hidden="true">*</span></label>
+                <input type="tel" id="cf-phone" name="telefono" placeholder="320 123 4567" autocomplete="tel" required maxlength="20" pattern="[\d\s\+\-\(\)]{6,20}" aria-describedby="err-phone" />
+                <span class="field-error-msg" id="err-phone" role="alert" aria-hidden="true">Inserisci un numero valido</span>
               </div>
             </div>
             <div class="form-row">
               <div class="form-field">
                 <label for="cf-email">Email</label>
-                <input type="email" id="cf-email" name="email" placeholder="mario@email.it" autocomplete="email" />
+                <input type="email" id="cf-email" name="email" placeholder="mario@email.it" autocomplete="email" maxlength="254" />
               </div>
               <div class="form-field">
                 <label for="cf-service">Tipo di intervento</label>
                 <select id="cf-service" name="servizio">
                   <option value="">Seleziona un servizio…</option>
-                  <option>Diagnosi Elettronica</option>
-                  <option>Tagliando</option>
-                  <option>Freni e Sospensioni</option>
-                  <option>Aria Condizionata</option>
-                  <option>Cambio Automatico</option>
-                  <option>Elettrauto</option>
-                  <option>Pneumatici</option>
-                  <option>Revisione Ministeriale</option>
-                  <option>Altro</option>
+                  <option value="diagnosi" selected>Diagnosi Elettronica</option>
+                  <option value="tagliando">Tagliando</option>
+                  <option value="freni">Freni e Sospensioni</option>
+                  <option value="clima">Aria Condizionata</option>
+                  <option value="cambio">Cambio Automatico</option>
+                  <option value="elettrauto">Elettrauto</option>
+                  <option value="pneumatici">Pneumatici</option>
+                  <option value="revisione">Revisione Ministeriale</option>
+                  <option value="altro">Altro</option>
                 </select>
               </div>
             </div>
             <div class="form-field">
               <label for="cf-message">Descrivi brevemente</label>
-              <textarea id="cf-message" name="messaggio" rows="4" placeholder="Es: La spia del motore è accesa da ieri mattina, la macchina tira leggermente a destra e sento un rumore sordo in frenata…"></textarea>
+              <textarea id="cf-message" name="messaggio" rows="4" maxlength="2000" placeholder="Es: La spia del motore è accesa da ieri mattina, la macchina tira leggermente a destra e sento un rumore sordo in frenata…"></textarea>
             </div>
-            <div class="form-field">
+            <div class="form-field" id="ff-privacy">
               <label class="checkbox-label">
-                <input type="checkbox" id="cf-privacy" name="privacy" required />
+                <input type="checkbox" id="cf-privacy" name="privacy" required aria-describedby="err-privacy" />
                 <span>Ho letto e accetto il trattamento dei dati personali ai sensi del <abbr title="Regolamento UE 2016/679">Regolamento UE 2016/679 (GDPR)</abbr>. <span class="required-star" aria-hidden="true">*</span></span>
               </label>
+              <span class="field-error-msg" id="err-privacy" role="alert" aria-hidden="true">Accetta il trattamento dei dati per continuare</span>
             </div>
             <div class="form-footer">
               <button type="submit" id="cf-submit" class="btn btn-primary btn-lg" disabled aria-disabled="true">
@@ -773,11 +811,13 @@
             </div>
           </form>
 
+          <div id="form-error" class="form-error" hidden role="alert" aria-live="assertive"></div>
+
           <div id="form-success" class="form-success" hidden aria-live="polite">
             <svg class="form-success-icon" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-              <circle cx="32" cy="32" r="32" fill="rgba(16,185,129,0.12)"/>
-              <circle cx="32" cy="32" r="22" fill="rgba(16,185,129,0.18)"/>
-              <path d="M21 32l8 8 14-16" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="32" r="32" fill="rgba(0,74,173,0.12)"/>
+              <circle cx="32" cy="32" r="22" fill="rgba(0,74,173,0.18)"/>
+              <path d="M21 32l8 8 14-16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <p class="form-success-title">Richiesta inviata!</p>
             <p class="form-success-text">Ti ricontatteremo entro poche ore. A presto!</p>
@@ -858,7 +898,7 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
               </svg>
-              <span>Lun–Ven&nbsp;&nbsp;08:30 – 18:30<br>Sabato&nbsp;&nbsp;&nbsp;&nbsp;08:30 – 12:30</span>
+              <span>Lun–Ven&nbsp;&nbsp;08:30 – 19:30</span>
             </li>
             <li class="footer-info-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -897,6 +937,5 @@
     </svg>
   </a>
 
-  <script src="script.js"></script>
 </body>
 </html>

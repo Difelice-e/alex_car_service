@@ -27,7 +27,7 @@
         ? heroWrapper.offsetTop + heroWrapper.offsetHeight
         : window.innerHeight;
       const onScroll = () => navHeader.classList.toggle('scrolled', window.scrollY >= getThreshold());
-      const onScroll2 = () => ndocument.body.classList.toggle('no-scroll', window.scrollY >= getThreshold());
+      const onScroll2 = () => document.body.classList.toggle('no-scroll', window.scrollY >= getThreshold());
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('scroll', onScroll2, { passive: true });
       onScroll();
@@ -102,21 +102,20 @@
   }
 
   // ─── Spec bar animation ───
-  // Bars start at 0 width; animate to their --fill value on viewport entry
+  // Bars start at scaleX(0); animate to their --fill value on viewport entry
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     const specBars = document.querySelectorAll('.spec-bar');
     if (specBars.length) {
-      // Capture fill values and reset to 0 before painting
+      // Capture fill values as scaleX scale factors (0–1)
       specBars.forEach(bar => {
         const fill = getComputedStyle(bar).getPropertyValue('--fill').trim();
-        bar.dataset.fill = fill || '0%';
-        bar.style.width = '0';
+        bar.dataset.scale = (parseFloat(fill) / 100 || 0).toFixed(4);
       });
 
       const barObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.dataset.fill;
+            entry.target.style.transform = `scaleX(${entry.target.dataset.scale})`;
             barObserver.unobserve(entry.target);
           }
         });
@@ -174,6 +173,28 @@
 
     if (!wrapper || !canvas) return;
 
+    // ─── Page loader dismiss ───
+    const pageLoader = document.getElementById('page-loader');
+    const LOADER_MIN_MS = 1400; // enough for all entrance animations (~0.78s) + breathing room
+    let loaderFrameReady = false;
+    let loaderTimeReady  = false;
+
+    function tryDismissLoader() {
+      if (!loaderFrameReady || !loaderTimeReady) return;
+      if (!pageLoader || pageLoader.classList.contains('is-hidden')) return;
+      pageLoader.classList.add('is-hidden');
+      pageLoader.addEventListener('transitionend', function () {
+        pageLoader.remove();
+      }, { once: true });
+    }
+
+    setTimeout(function () { loaderTimeReady = true; tryDismissLoader(); }, LOADER_MIN_MS);
+
+    function dismissLoader() {
+      loaderFrameReady = true;
+      tryDismissLoader();
+    }
+
     // ─── Frame preloader ───
     const FRAME_COUNT = 121;
     const FRAME_BASE  = 'brand_assets/frames/ezgif-frame-';
@@ -199,15 +220,37 @@
       ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
     }
 
+    let framesLoaded = 0;
+    let fullLoadStarted = false;
+
+    function loadFrame(i) {
+      if (frames[i] && frames[i].src) return; // already loading/loaded
+      const img = new Image();
+      const num = String(i + 1).padStart(3, '0');
+      img.src = FRAME_BASE + num + '.jpg';
+      img.onload = function () {
+        framesLoaded++;
+        if (i === 0) { resizeCanvas(); dismissLoader(); }
+      };
+      img.onerror = function () {
+        frames[i] = null;
+        if (i === 0) dismissLoader();
+      };
+      frames[i] = img;
+    }
+
     function preloadFrames() {
-      for (let i = 0; i < FRAME_COUNT; i++) {
-        const img = new Image();
-        const num = String(i + 1).padStart(3, '0');
-        img.src = FRAME_BASE + num + '.jpg';
-        img.onload = function () {
-          if (i === 0) { resizeCanvas(); } // draw first frame as soon as ready
-        };
-        frames[i] = img;
+      // Eagerly load first 10 frames so initial scroll feels instant
+      for (let i = 0; i < Math.min(10, FRAME_COUNT); i++) {
+        loadFrame(i);
+      }
+    }
+
+    function loadAllFrames() {
+      if (fullLoadStarted) return;
+      fullLoadStarted = true;
+      for (let i = 10; i < FRAME_COUNT; i++) {
+        loadFrame(i);
       }
     }
 
@@ -296,6 +339,26 @@
       return;
     }
 
+    // ─── Mobile: passive scroll-driven, no interception ───
+    // On narrow viewports the hero-visual is hidden so the 4s animation lock
+    // provides nothing to see. Instead, derive progress directly from scroll.
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+      // Load remaining frames as soon as user shows scroll intent
+      window.addEventListener('scroll', loadAllFrames, { passive: true, once: true });
+      function applyScrollProgress() {
+        const bounds = getWrapperScrollBounds();
+        const scrolled = Math.max(0, window.scrollY - bounds.wTop);
+        const travel  = bounds.wBottom - bounds.wTop;
+        const p       = travel > 0 ? Math.min(1, scrolled / travel) : 0;
+        currentProg   = p;
+        applyProgress(p);
+        if (scrollCue) scrollCue.classList.toggle('hidden', p > 0.05);
+      }
+      window.addEventListener('scroll', applyScrollProgress, { passive: true });
+      applyScrollProgress();
+      return;
+    }
+
     // ─── State machine ───
     // 'idle'      → at progress 0, waiting for scroll-down
     // 'animating' → programmatic transition running
@@ -365,6 +428,7 @@
       if (state === 'animating') return true; // block, do nothing else
 
       if (state === 'idle' && deltaY > 0) {
+        loadAllFrames(); // begin loading remaining frames on first scroll-down
         if (scrollCue) scrollCue.classList.add('hidden');
         animateHero(0, 1);
         return true;
@@ -429,16 +493,46 @@
     const form      = document.getElementById('contact-form');
     const submitBtn = document.getElementById('cf-submit');
     const successEl = document.getElementById('form-success');
+    const errorEl   = document.getElementById('form-error');
     if (!form || !submitBtn || !successEl) return;
+
+    const submitBtnOriginalHTML = submitBtn.innerHTML;
 
     const nameInput    = document.getElementById('cf-name');
     const phoneInput   = document.getElementById('cf-phone');
     const privacyCheck = document.getElementById('cf-privacy');
 
+    // Field-level validation with inline error messages
+    const fieldRules = [
+      {
+        el: nameInput,
+        wrapper: document.getElementById('ff-name'),
+        msgId: 'err-name',
+        validate: function (el) { return el.value.trim().length >= 2; }
+      },
+      {
+        el: phoneInput,
+        wrapper: document.getElementById('ff-phone'),
+        msgId: 'err-phone',
+        validate: function (el) { return /[\d]{6,}/.test(el.value.replace(/[\s\+\-\(\)]/g, '')); }
+      },
+      {
+        el: privacyCheck,
+        wrapper: document.getElementById('ff-privacy'),
+        msgId: 'err-privacy',
+        validate: function (el) { return el.checked; }
+      }
+    ];
+
+    function setFieldError(rule, hasError) {
+      if (!rule.wrapper) return;
+      rule.wrapper.classList.toggle('form-field--error', hasError);
+      const msg = document.getElementById(rule.msgId);
+      if (msg) msg.setAttribute('aria-hidden', String(!hasError));
+    }
+
     function isValid() {
-      return nameInput.value.trim() !== '' &&
-             phoneInput.value.trim() !== '' &&
-             privacyCheck.checked;
+      return fieldRules.every(function (r) { return r.validate(r.el); });
     }
 
     function updateSubmit() {
@@ -447,17 +541,40 @@
       submitBtn.setAttribute('aria-disabled', String(!valid));
     }
 
-    [nameInput, phoneInput, privacyCheck].forEach(el => {
+    // Show inline errors only after user has interacted with each field
+    fieldRules.forEach(function (rule) {
+      if (!rule.el) return;
+      const evts = rule.el.type === 'checkbox' ? ['change'] : ['blur', 'input'];
+      evts.forEach(function (evt) {
+        rule.el.addEventListener(evt, function () {
+          setFieldError(rule, !rule.validate(rule.el));
+          updateSubmit();
+        });
+      });
+    });
+
+    [nameInput, phoneInput, privacyCheck].forEach(function (el) {
+      if (!el) return;
       el.addEventListener('input', updateSubmit);
       el.addEventListener('change', updateSubmit);
     });
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!isValid()) return;
+
+      // Validate all fields and show errors on attempt
+      let firstError = null;
+      fieldRules.forEach(function (rule) {
+        const hasError = !rule.validate(rule.el);
+        setFieldError(rule, hasError);
+        if (hasError && !firstError) firstError = rule.el;
+      });
+      if (firstError) { firstError.focus(); return; }
 
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Invio in corso…';
+      submitBtn.setAttribute('aria-busy', 'true');
+      submitBtn.textContent = 'Invio in corso\u2026';
+      if (errorEl) errorEl.hidden = true;
 
       fetch(form.action, {
         method: 'POST',
@@ -466,6 +583,7 @@
       })
         .then(function (res) {
           if (res.ok) {
+            submitBtn.removeAttribute('aria-busy');
             form.hidden = true;
             successEl.hidden = false;
           } else {
@@ -474,11 +592,28 @@
             });
           }
         })
-        .catch(function (err) {
+        .catch(function () {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = 'Invia richiesta <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-          alert('Si è verificato un errore: ' + err.message + '\nRiprova o contattaci telefonicamente.');
+          submitBtn.removeAttribute('aria-busy');
+          submitBtn.innerHTML = submitBtnOriginalHTML;
+          if (errorEl) {
+            errorEl.textContent = 'Invio non riuscito. Riprova o contattaci al 320 640 3331.';
+            errorEl.hidden = false;
+          }
         });
+    });
+  }());
+
+  // ─── Map iframe fallback ───
+  (function () {
+    const iframe   = document.getElementById('map-iframe');
+    const fallback = document.getElementById('map-fallback');
+    if (!iframe || !fallback) return;
+
+    iframe.addEventListener('error', function () {
+      iframe.hidden = true;
+      fallback.hidden = false;
+      fallback.removeAttribute('aria-hidden');
     });
   }());
 

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Note Legali di Alex Car Service – Termini d'uso e informazioni legali sul sito." />
+  <meta name="robots" content="noindex, follow" />
+  <title>Note Legali – Alex Car Service</title>
+  <link rel="icon" type="image/x-icon" href="imgs/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .legal-header {
+      padding: calc(var(--sp-24) + 72px) 0 var(--sp-12);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+    .legal-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--on-primary-container);
+      margin-bottom: var(--sp-3);
+    }
+    .legal-header .legal-meta {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+    }
+    .legal-body {
+      padding: var(--sp-12) 0 var(--sp-24);
+      max-width: 760px;
+    }
+    .legal-body h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      margin: var(--sp-10) 0 var(--sp-3);
+      padding-bottom: var(--sp-2);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+    .legal-body p, .legal-body li {
+      font-size: 0.9375rem;
+      color: var(--on-surface-variant);
+      line-height: 1.75;
+      margin-bottom: var(--sp-3);
+    }
+    .legal-body ul { padding-left: var(--sp-6); list-style: disc; }
+    .legal-body a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+    .legal-back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--on-surface-variant);
+      margin-bottom: var(--sp-6);
+      transition: color var(--motion-fast);
+    }
+    .legal-back:hover { color: var(--on-surface); }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Vai al contenuto</a>
+
+  <header class="nav-header scrolled" id="nav-header" role="banner">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Alex Car Service – torna alla home">
+        <img src="imgs/logo.png" alt="Alex Car Service" class="nav-logo-img" width="120" height="48" />
+      </a>
+      <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navigazione principale">
+        <button class="nav-close" id="nav-close" aria-label="Chiudi menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <a href="index.html#servizi" class="nav-link">Servizi</a>
+        <a href="index.html#perche-noi" class="nav-link">Perché Noi</a>
+        <a href="index.html#testimonianze" class="nav-link">Recensioni</a>
+        <a href="index.html#contatti" class="nav-link">Contatti</a>
+        <a href="tel:+393206403331" class="nav-mobile-cta" aria-label="Chiama ora 320 640 3331">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Chiama Ora
+        </a>
+      </nav>
+      <a href="tel:+393206403331" class="btn btn-emergency nav-cta" aria-label="Chiama ora 320 640 3331">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        Chiama Ora
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="legal-header">
+      <div class="container">
+        <a href="index.html" class="legal-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          Torna alla home
+        </a>
+        <h1>Note Legali</h1>
+        <p class="legal-meta">Ultimo aggiornamento: aprile 2025</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="legal-body">
+
+        <h2>1. Titolare del sito</h2>
+        <p>
+          <strong>Alex Car Service</strong><br>
+          Via A. Vespucci, 16 – 65015 Montesilvano (PE)<br>
+          P.IVA 02859570695 &middot; C.F. RSSLSN90M23Z138N &middot; SDI: M5UXCR1<br>
+          Tel.: <a href="tel:+393206403331">320 640 3331</a><br>
+          Email: <a href="mailto:info.alexcarservice@gmail.com">info.alexcarservice@gmail.com</a>
+        </p>
+
+        <h2>2. Proprietà intellettuale</h2>
+        <p>Tutti i contenuti di questo sito (testi, immagini, loghi, grafica, codice) sono di proprietà esclusiva di Alex Car Service o dei rispettivi titolari e sono protetti dalla normativa sul diritto d'autore (L. 633/1941 e D.Lgs. 68/2003).</p>
+        <p>È vietata la riproduzione, la distribuzione o l'utilizzo dei contenuti senza esplicita autorizzazione scritta del titolare, salvo uso personale e non commerciale.</p>
+
+        <h2>3. Limitazione di responsabilità</h2>
+        <p>Le informazioni contenute in questo sito sono fornite a scopo puramente informativo. Alex Car Service si impegna a mantenerle aggiornate e corrette, ma non garantisce la completezza né l'assenza di errori.</p>
+        <p>Alex Car Service non è responsabile per eventuali danni diretti o indiretti derivanti dall'utilizzo o dall'impossibilità di utilizzo del sito, né per il contenuto di siti esterni raggiungibili tramite link presenti nel sito.</p>
+
+        <h2>4. Link a siti terzi</h2>
+        <p>Il sito può contenere link a siti di terze parti (es. Google Maps, WhatsApp). Questi link sono forniti per comodità dell'utente; Alex Car Service non controlla tali siti e non è responsabile del loro contenuto o delle loro pratiche di privacy.</p>
+
+        <h2>5. Legge applicabile e foro competente</h2>
+        <p>Il presente sito e i rapporti tra l'utente e Alex Car Service sono regolati dalla legge italiana. Per qualsiasi controversia è competente in via esclusiva il Foro di Pescara, salvo diversa disposizione di legge inderogabile a tutela del consumatore.</p>
+
+        <h2>6. Aggiornamenti</h2>
+        <p>Alex Car Service si riserva il diritto di modificare queste note legali in qualsiasi momento. Le modifiche saranno efficaci dalla data di pubblicazione su questa pagina.</p>
+
+        <h2>7. Documenti correlati</h2>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a> – informativa sul trattamento dei dati personali</li>
+          <li><a href="cookie.html">Cookie Policy</a> – informazioni sull'uso dei cookie</li>
+        </ul>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-divider" role="separator" aria-hidden="true"></div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-meta">
+          <p>P.IVA 02859570695 &middot; C.F. RSSLSN90M23Z138N &middot; SDI: M5UXCR1</p>
+          <p>&copy; <span id="year"></span> Alex Car Service. Tutti i diritti riservati. &middot; Powered by <strong>GRY Bromer</strong></p>
+        </div>
+        <nav class="footer-legal-links" aria-label="Link legali">
+          <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          <a href="cookie.html" class="footer-legal-link">Cookie Policy</a>
+          <a href="note-legali.html" class="footer-legal-link" aria-current="page">Note Legali</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

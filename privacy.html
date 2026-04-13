@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy di Alex Car Service – Informativa sul trattamento dei dati personali ai sensi del GDPR." />
+  <meta name="robots" content="noindex, follow" />
+  <title>Privacy Policy – Alex Car Service</title>
+  <link rel="icon" type="image/x-icon" href="imgs/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .legal-header {
+      padding: calc(var(--sp-24) + 72px) 0 var(--sp-12);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+    .legal-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--on-primary-container);
+      margin-bottom: var(--sp-3);
+    }
+    .legal-header .legal-meta {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+    }
+    .legal-body {
+      padding: var(--sp-12) 0 var(--sp-24);
+      max-width: 760px;
+    }
+    .legal-body h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      margin: var(--sp-10) 0 var(--sp-3);
+      padding-bottom: var(--sp-2);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+    .legal-body p, .legal-body li {
+      font-size: 0.9375rem;
+      color: var(--on-surface-variant);
+      line-height: 1.75;
+      margin-bottom: var(--sp-3);
+    }
+    .legal-body ul { padding-left: var(--sp-6); list-style: disc; }
+    .legal-body a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+    .legal-back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--on-surface-variant);
+      margin-bottom: var(--sp-6);
+      transition: color var(--motion-fast);
+    }
+    .legal-back:hover { color: var(--on-surface); }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Vai al contenuto</a>
+
+  <header class="nav-header scrolled" id="nav-header" role="banner">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Alex Car Service – torna alla home">
+        <img src="imgs/logo.png" alt="Alex Car Service" class="nav-logo-img" width="120" height="48" />
+      </a>
+      <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navigazione principale">
+        <button class="nav-close" id="nav-close" aria-label="Chiudi menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <a href="index.html#servizi" class="nav-link">Servizi</a>
+        <a href="index.html#perche-noi" class="nav-link">Perché Noi</a>
+        <a href="index.html#testimonianze" class="nav-link">Recensioni</a>
+        <a href="index.html#contatti" class="nav-link">Contatti</a>
+        <a href="tel:+393206403331" class="nav-mobile-cta" aria-label="Chiama ora 320 640 3331">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Chiama Ora
+        </a>
+      </nav>
+      <a href="tel:+393206403331" class="btn btn-emergency nav-cta" aria-label="Chiama ora 320 640 3331">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        Chiama Ora
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="legal-header">
+      <div class="container">
+        <a href="index.html" class="legal-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          Torna alla home
+        </a>
+        <h1>Privacy Policy</h1>
+        <p class="legal-meta">Ultimo aggiornamento: aprile 2025 &middot; Ai sensi del Reg. UE 2016/679 (GDPR)</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="legal-body">
+
+        <h2>1. Titolare del trattamento</h2>
+        <p>
+          <strong>Alex Car Service</strong><br>
+          Via A. Vespucci, 16 – 65015 Montesilvano (PE)<br>
+          P.IVA 02859570695 &middot; C.F. RSSLSN90M23Z138N<br>
+          Tel.: <a href="tel:+393206403331">320 640 3331</a><br>
+          Email: <a href="mailto:info.alexcarservice@gmail.com">info.alexcarservice@gmail.com</a>
+        </p>
+
+        <h2 id="trattamento-dati">2. Dati raccolti e finalità</h2>
+        <p>Raccogliamo i dati personali esclusivamente per le seguenti finalità:</p>
+        <ul>
+          <li><strong>Modulo di contatto / preventivo</strong> – nome, email, numero di telefono, targa e messaggio, per rispondere alle richieste e fornire preventivi (base giuridica: esecuzione di misure precontrattuali su richiesta dell'interessato, art. 6 §1 lett. b GDPR).</li>
+          <li><strong>Telefonate e WhatsApp</strong> – numero di telefono, per gestire le prenotazioni e le richieste di assistenza (base giuridica: legittimo interesse del Titolare).</li>
+          <li><strong>Navigazione sul sito</strong> – dati tecnici (indirizzo IP, browser, sistema operativo) raccolti automaticamente dai log del server per garantire il funzionamento del sito (base giuridica: legittimo interesse del Titolare).</li>
+        </ul>
+        <p>Non effettuiamo profilazione né utilizziamo i dati per finalità di marketing senza esplicito consenso.</p>
+
+        <h2>3. Conservazione dei dati</h2>
+        <p>I dati raccolti tramite il modulo di contatto sono conservati per il tempo strettamente necessario a gestire la richiesta e, in ogni caso, non oltre 24 mesi. I log del server sono conservati per 30 giorni salvo obblighi di legge.</p>
+
+        <h2>4. Comunicazione e diffusione</h2>
+        <p>I dati non sono ceduti a terzi né diffusi, salvo i seguenti destinatari:</p>
+        <ul>
+          <li>Servizi tecnici necessari all'erogazione del sito (hosting, email provider) che operano come Responsabili del trattamento ex art. 28 GDPR.</li>
+          <li>Autorità giudiziarie o amministrative, quando previsto per legge.</li>
+        </ul>
+
+        <h2>5. Trasferimento extra-UE</h2>
+        <p>I dati non sono trasferiti in paesi extra-UE. Qualora un fornitore tecnico dovesse operare fuori dallo Spazio Economico Europeo, il trasferimento avverrà in presenza di adeguate garanzie (es. Standard Contractual Clauses).</p>
+
+        <h2>6. Diritti degli interessati</h2>
+        <p>In qualunque momento hai il diritto di:</p>
+        <ul>
+          <li>Accedere ai tuoi dati personali (art. 15 GDPR)</li>
+          <li>Richiederne la rettifica (art. 16) o la cancellazione (art. 17)</li>
+          <li>Ottenere la limitazione del trattamento (art. 18)</li>
+          <li>Opporti al trattamento (art. 21)</li>
+          <li>Richiedere la portabilità dei dati (art. 20)</li>
+          <li>Revocare il consenso in qualsiasi momento, senza pregiudizio per la liceità del trattamento effettuato prima della revoca</li>
+          <li>Proporre reclamo al Garante per la Protezione dei Dati Personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">www.garanteprivacy.it</a>)</li>
+        </ul>
+        <p>Per esercitare i tuoi diritti scrivi a: <a href="mailto:info.alexcarservice@gmail.com">info.alexcarservice@gmail.com</a></p>
+
+        <h2>7. Cookie</h2>
+        <p>Per informazioni sull'uso dei cookie consulta la nostra <a href="cookie.html">Cookie Policy</a>.</p>
+
+        <h2>8. Modifiche alla presente informativa</h2>
+        <p>Ci riserviamo di aggiornare questa informativa. Le modifiche sostanziali saranno evidenziate in questa pagina con la data di aggiornamento. Ti invitiamo a consultarla periodicamente.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-divider" role="separator" aria-hidden="true"></div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-meta">
+          <p>P.IVA 02859570695 &middot; C.F. RSSLSN90M23Z138N &middot; SDI: M5UXCR1</p>
+          <p>&copy; <span id="year"></span> Alex Car Service. Tutti i diritti riservati. &middot; Powered by <strong>GRY Bromer</strong></p>
+        </div>
+        <nav class="footer-legal-links" aria-label="Link legali">
+          <a href="privacy.html" class="footer-legal-link" aria-current="page">Privacy Policy</a>
+          <a href="cookie.html" class="footer-legal-link">Cookie Policy</a>
+          <a href="note-legali.html" class="footer-legal-link">Note Legali</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

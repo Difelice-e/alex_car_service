@@ -21,16 +21,6 @@
         ([entry]) => navHeader.classList.toggle('scrolled', !entry.isIntersecting) && document.body.classList.toggle('no-scroll', entry.isIntersecting),
         { threshold: .3 }
       ).observe(heroWrapper);
-    } else {
-      // Fallback: use hero wrapper height, or viewport height if wrapper not found
-      const getThreshold = () => heroWrapper
-        ? heroWrapper.offsetTop + heroWrapper.offsetHeight
-        : window.innerHeight;
-      const onScroll = () => navHeader.classList.toggle('scrolled', window.scrollY >= getThreshold());
-      const onScroll2 = () => document.body.classList.toggle('no-scroll', window.scrollY >= getThreshold());
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('scroll', onScroll2, { passive: true });
-      onScroll();
     }
   }
 
@@ -342,22 +332,22 @@
     // ─── Mobile: passive scroll-driven, no interception ───
     // On narrow viewports the hero-visual is hidden so the 4s animation lock
     // provides nothing to see. Instead, derive progress directly from scroll.
-    if (window.matchMedia('(max-width: 1023px)').matches) {
-      // Load remaining frames as soon as user shows scroll intent
-      window.addEventListener('scroll', loadAllFrames, { passive: true, once: true });
-      function applyScrollProgress() {
-        const bounds = getWrapperScrollBounds();
-        const scrolled = Math.max(0, window.scrollY - bounds.wTop);
-        const travel  = bounds.wBottom - bounds.wTop;
-        const p       = travel > 0 ? Math.min(1, scrolled / travel) : 0;
-        currentProg   = p;
-        applyProgress(p);
-        if (scrollCue) scrollCue.classList.toggle('hidden', p > 0.05);
-      }
-      window.addEventListener('scroll', applyScrollProgress, { passive: true });
-      applyScrollProgress();
-      return;
-    }
+    // if (window.matchMedia('(max-width: 1023px)').matches) {
+    //   // Load remaining frames as soon as user shows scroll intent
+    //   window.addEventListener('scroll', loadAllFrames, { passive: true, once: true });
+    //   function applyScrollProgress() {
+    //     const bounds = getWrapperScrollBounds();
+    //     const scrolled = Math.max(0, window.scrollY - bounds.wTop);
+    //     const travel  = bounds.wBottom - bounds.wTop;
+    //     const p       = travel > 0 ? Math.min(1, scrolled / travel) : 0;
+    //     currentProg   = p;
+    //     applyProgress(p);
+    //     if (scrollCue) scrollCue.classList.toggle('hidden', p > 0.05);
+    //   }
+    //   window.addEventListener('scroll', applyScrollProgress, { passive: true });
+    //   applyScrollProgress();
+    //   return;
+    // }
 
     // ─── State machine ───
     // 'idle'      → at progress 0, waiting for scroll-down

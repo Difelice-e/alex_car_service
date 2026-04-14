@@ -356,7 +356,7 @@
     let state = 'idle';
     let rafId = null;
 
-    const ANIM_DURATION = 4000; // ms, matches video length
+    const ANIM_DURATION = 5500; // ms, matches video length
 
     function easeInOut(t) {
       return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;

@@ -186,8 +186,8 @@
     }
 
     // ─── Frame preloader ───
-    const FRAME_COUNT = 121;
-    const FRAME_BASE  = 'brand_assets/frames/ezgif-frame-';
+    const FRAME_COUNT = 181;
+    const FRAME_BASE  = 'frames/frame_';
     const frames      = new Array(FRAME_COUNT);
     const ctx         = canvas.getContext('2d');
     let   currentProg = 0;
@@ -216,8 +216,8 @@
     function loadFrame(i) {
       if (frames[i] && frames[i].src) return; // already loading/loaded
       const img = new Image();
-      const num = String(i + 1).padStart(3, '0');
-      img.src = FRAME_BASE + num + '.jpg';
+      const num = String(i + 1).padStart(4, '0');
+      img.src = FRAME_BASE + num + '.png';
       img.onload = function () {
         framesLoaded++;
         if (i === 0) { resizeCanvas(); dismissLoader(); }

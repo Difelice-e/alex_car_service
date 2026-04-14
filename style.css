@@ -598,7 +598,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ══════════════════════════════════════ */
 /* ─── Hero scroll-wrapper: provides the scroll distance for the pin ─── */
 .hero-scroll-wrapper {
-  height: 300vh; /* 100vh visible + 200vh of scroll travel */
+  height: 400vh; /* 100vh visible + 300vh of scroll travel */
   position: relative;
 }
 
@@ -926,28 +926,35 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
   gap: var(--sp-2);
   transition: opacity 0.4s ease;
+  filter: drop-shadow(0 0 6px rgba(176, 198, 255, 0.35));
+  animation: scrollGlow 3s ease-in-out infinite;
 }
 .hero-scroll-cue.hidden {
   opacity: 0;
   pointer-events: none;
 }
 .scroll-label {
-  font-size: 0.625rem;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(176, 198, 255, 0.5);
+  color: rgba(176, 198, 255, 0.8);
   font-weight: 500;
+  text-shadow: 0 0 10px rgba(176, 198, 255, 0.6), 0 0 20px rgba(176, 198, 255, 0.3);
 }
-.scroll-line {
-  width: 1px; height: 48px;
-  background: linear-gradient(to bottom, transparent, rgba(176, 198, 255, 0.4), transparent);
+.scroll-arrow {
+  width: 28px; height: 28px;
+  filter: drop-shadow(0 0 4px rgba(176, 198, 255, 0.6));
   animation: scrollCue 2s ease-in-out infinite;
 }
 @keyframes scrollCue {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.6) translateY(-4px); }
-  50% { opacity: 1; transform: scaleY(1) translateY(4px); }
+  0%, 100% { opacity: 0.4; transform: translateY(-4px); }
+  50% { opacity: 1; transform: translateY(4px); }
 }
-@media (prefers-reduced-motion: reduce) { .scroll-line { animation: none; opacity: 0.4; } }
+@keyframes scrollGlow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(176, 198, 255, 0.3)); }
+  50% { filter: drop-shadow(0 0 12px rgba(176, 198, 255, 0.6)); }
+}
+@media (prefers-reduced-motion: reduce) { .scroll-line { animation: none; opacity: 0.4; } .hero-scroll-cue { animation: none; filter: none; } }
 
 /* Hero claim — appears at animation end */
 .hero-claim {

@@ -2073,6 +2073,10 @@ a.contact-value:hover { color: var(--primary); }
     overflow-wrap: break-word;
   }
   .hero-claim-text { font-size: 2rem; }
+
+  /* Contact card: dial down text for narrow screens */
+  .contact-card .contact-value { font-size: 0.875rem; }
+  .contact-card .contact-label { font-size: 0.625rem; }
 }
 
 /* ─── WhatsApp Floating Button ─── */

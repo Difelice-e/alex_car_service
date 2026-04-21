@@ -2055,7 +2055,7 @@ a.contact-value:hover { color: var(--primary); }
   /* The body ships with .no-scroll to lock the page until the desktop hero
      animation completes. Without the animation here, the lock would strand
      the user on the hero — neutralise it. */
-  .no-scroll { overflow: visible; }
+  .no-scroll { overflow: auto; }
 }
 @media (max-width: 767px) {
   .hero { padding-top: calc(68px + var(--sp-10)); }

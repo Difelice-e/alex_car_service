@@ -2052,6 +2052,10 @@ a.contact-value:hover { color: var(--primary); }
   /* Collapse the 400vh scroll travel — the frame animation is disabled
      on mobile/tablet, so .hero-canvas just shows car_fallback.png via CSS. */
   .hero-scroll-wrapper { height: auto; }
+  /* The body ships with .no-scroll to lock the page until the desktop hero
+     animation completes. Without the animation here, the lock would strand
+     the user on the hero — neutralise it. */
+  .no-scroll { overflow: visible; }
 }
 @media (max-width: 767px) {
   .hero { padding-top: calc(68px + var(--sp-10)); }

@@ -2049,6 +2049,9 @@ a.contact-value:hover { color: var(--primary); }
 ══════════════════════════════════════ */
 @media (max-width: 1024px) {
   .hero-visual { display: none; }
+  /* Collapse the 400vh scroll travel — the frame animation is disabled
+     on mobile/tablet, so .hero-canvas just shows car_fallback.png via CSS. */
+  .hero-scroll-wrapper { height: auto; }
 }
 @media (max-width: 767px) {
   .hero { padding-top: calc(68px + var(--sp-10)); }

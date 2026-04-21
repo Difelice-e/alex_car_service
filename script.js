@@ -185,6 +185,14 @@
       tryDismissLoader();
     }
 
+    // ─── Mobile: skip the scroll-driven frame animation ───
+    // Below 1024px the hero-visual card is hidden, so the animation has no
+    // payoff. .hero-canvas exposes car_fallback.png as a plain CSS background.
+    if (window.matchMedia('(max-width: 1024px)').matches) {
+      dismissLoader();
+      return;
+    }
+
     // ─── Frame preloader ───
     const FRAME_COUNT = 181;
     const FRAME_BASE  = 'frames/frame_';

@@ -10,8 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cookie-banner.css" />
   <link rel="preload" href="frames/frame_0001.png" as="image" fetchpriority="high" />
   <script src="script.js" defer></script>
+  <script src="cookie-banner.js" defer></script>
 </head>
 <body class="no-scroll">
 <noscript><style>body { overflow: auto !important; }</style></noscript>
@@ -920,13 +922,13 @@
       <div class="footer-bottom">
         <div class="footer-bottom-meta">
           <p>P.IVA 02859570695 &middot; C.F. RSSLSN90M23Z138N &middot; SDI: M5UXCR1</p>
-          <p>&copy; <span id="year"></span> Alex Car Service. Tutti i diritti riservati. &middot; Powered by <strong>GRY Bromer</strong></p>
+          <p>&copy; <span id="year"></span> Alex Car Service. Tutti i diritti riservati. &middot; Powered by <strong>GRY Broker</strong></p>
         </div>
         <nav class="footer-legal-links" aria-label="Link legali">
           <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
           <a href="cookie.html" class="footer-legal-link">Cookie Policy</a>
           <a href="note-legali.html" class="footer-legal-link">Note Legali</a>
-          <a href="privacy.html#trattamento-dati" class="footer-legal-link">Trattamento Dati</a>
+          <a href="#" class="footer-legal-link" onclick="event.preventDefault(); window.__openCookiePreferences && window.__openCookiePreferences();">Gestisci preferenze cookie</a>
         </nav>
       </div>
 
@@ -940,5 +942,15 @@
     </svg>
   </a>
 
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  if (window.CookieBanner) {
+    window.CookieBanner.init({
+      policyUrl: 'cookie.html',
+      version: '1'
+    });
+  }
+});
+</script>
 </body>
 </html>

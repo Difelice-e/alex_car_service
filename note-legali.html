@@ -57,8 +57,18 @@
       transition: color var(--motion-fast);
     }
     .legal-back:hover { color: var(--on-surface); }
+    .info-box {
+      background: var(--surface-container-high);
+      border-left: 3px solid var(--primary);
+      padding: var(--sp-4) var(--sp-5);
+      margin: var(--sp-4) 0 var(--sp-6);
+      border-radius: var(--radius-sm);
+    }
+    .info-box p { margin-bottom: 0; font-size: 0.9rem; }
   </style>
+  <link rel="stylesheet" href="cookie-banner.css" />
   <script src="script.js" defer></script>
+  <script src="cookie-banner.js" defer></script>
 </head>
 <body>
 
@@ -106,43 +116,63 @@
           Torna alla home
         </a>
         <h1>Note Legali</h1>
-        <p class="legal-meta">Ultimo aggiornamento: aprile 2025</p>
+        <p class="legal-meta">Ultimo aggiornamento: maggio 2026</p>
       </div>
     </section>
 
     <div class="container">
       <div class="legal-body">
 
-        <h2>1. Titolare del sito</h2>
-        <p>
-          <strong>Alex Car Service</strong><br>
-          Via A. Vespucci, 16 – 65015 Montesilvano (PE)<br>
-          P.IVA 02859570695 &middot; C.F. RSSLSN90M23Z138N &middot; SDI: M5UXCR1<br>
-          Tel.: <a href="tel:+393206403331">320 640 3331</a><br>
-          Email: <a href="mailto:info.preventivialexcarservice@gmail.com">info.preventivialexcarservice@gmail.com</a>
-        </p>
+        <p>Informazioni rese ai sensi del <strong>D.Lgs. 70/2003 art. 7</strong> ("Decreto e-commerce" — obblighi informativi del prestatore di servizi della società dell'informazione).</p>
 
-        <h2>2. Proprietà intellettuale</h2>
+        <h2>1. Identificazione del titolare</h2>
+        <div class="info-box">
+          <p>
+            <strong>Alex Car Service</strong> &middot; Officina meccanica autoriparatori<br>
+            Via A. Vespucci, 16 – 65015 Montesilvano (PE), Italia<br>
+            <strong>P.IVA:</strong> 02859570695 &middot; <strong>C.F.:</strong> RSSLSN90M23Z138N<br>
+            <strong>Codice destinatario SDI:</strong> M5UXCR1<br>
+            <strong>Codice ATECO:</strong> 45.20.10 (Riparazioni meccaniche di autoveicoli)<br>
+            <strong>Iscrizione REA / Camera di Commercio Chieti-Pescara:</strong> [da inserire a cura del Titolare]<br>
+            <strong>Tel.:</strong> <a href="tel:+393206403331">320 640 3331</a><br>
+            <strong>Email:</strong> <a href="mailto:info.preventivialexcarservice@gmail.com">info.preventivialexcarservice@gmail.com</a>
+          </p>
+        </div>
+
+        <h2>2. Hosting provider</h2>
+        <p>Il sito è ospitato su <strong>GitHub Pages</strong> – GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA. Privacy: <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">docs.github.com/site-policy</a>.</p>
+
+        <h2>3. Iscrizione albo autoriparatori</h2>
+        <p>L'attività di autoriparazione è esercitata ai sensi della <strong>Legge 122/1992</strong> ("Disposizioni in materia di sicurezza della circolazione stradale e disciplina dell'attività di autoriparazione"). Il responsabile tecnico è iscritto al Registro Imprese / REA della CCIAA competente con qualifica idonea (meccatronica, carrozzeria o sezione equivalente). Estremi di iscrizione disponibili su richiesta.</p>
+
+        <h2>4. Proprietà intellettuale</h2>
         <p>Tutti i contenuti di questo sito (testi, immagini, loghi, grafica, codice) sono di proprietà esclusiva di Alex Car Service o dei rispettivi titolari e sono protetti dalla normativa sul diritto d'autore (L. 633/1941 e D.Lgs. 68/2003).</p>
         <p>È vietata la riproduzione, la distribuzione o l'utilizzo dei contenuti senza esplicita autorizzazione scritta del titolare, salvo uso personale e non commerciale.</p>
 
-        <h2>3. Limitazione di responsabilità</h2>
-        <p>Le informazioni contenute in questo sito sono fornite a scopo puramente informativo. Alex Car Service si impegna a mantenerle aggiornate e corrette, ma non garantisce la completezza né l'assenza di errori.</p>
-        <p>Alex Car Service non è responsabile per eventuali danni diretti o indiretti derivanti dall'utilizzo o dall'impossibilità di utilizzo del sito, né per il contenuto di siti esterni raggiungibili tramite link presenti nel sito.</p>
+        <h2>5. Limitazione di responsabilità</h2>
+        <p>Le informazioni contenute in questo sito sono fornite a scopo puramente informativo. I prezzi, i tempi di intervento e le condizioni indicate hanno carattere indicativo e <strong>non costituiscono offerta contrattuale</strong> ai sensi dell'art. 1336 c.c.; un preventivo vincolante è rilasciato per iscritto solo dopo presa in carico del veicolo.</p>
+        <p>Alex Car Service non è responsabile per eventuali danni diretti o indiretti derivanti dall'utilizzo o dall'impossibilità di utilizzo del sito, né per il contenuto di siti esterni raggiungibili tramite link presenti nel sito. Resta salva la responsabilità in caso di dolo o colpa grave e per i casi di responsabilità inderogabili previsti dalla legge.</p>
 
-        <h2>4. Link a siti terzi</h2>
-        <p>Il sito può contenere link a siti di terze parti (es. Google Maps, WhatsApp). Questi link sono forniti per comodità dell'utente; Alex Car Service non controlla tali siti e non è responsabile del loro contenuto o delle loro pratiche di privacy.</p>
+        <h2>6. Garanzia legale di conformità</h2>
+        <p>Sui ricambi e sugli interventi destinati a consumatori finali (B2C) trova applicazione la <strong>garanzia legale di conformità di 24 mesi</strong> prevista dagli artt. 128 e seguenti del D.Lgs. 206/2005 (Codice del Consumo). Le condizioni specifiche (durata, esclusioni, modalità di reclamo) sono indicate nel preventivo / fattura di lavoro.</p>
 
-        <h2>5. Legge applicabile e foro competente</h2>
-        <p>Il presente sito e i rapporti tra l'utente e Alex Car Service sono regolati dalla legge italiana. Per qualsiasi controversia è competente in via esclusiva il Foro di Pescara, salvo diversa disposizione di legge inderogabile a tutela del consumatore.</p>
+        <h2>7. Link a siti terzi</h2>
+        <p>Il sito contiene link a siti di terze parti (Google Maps, WhatsApp). Questi link sono forniti per comodità dell'utente; Alex Car Service non controlla tali siti e non è responsabile del loro contenuto o delle loro pratiche di privacy.</p>
 
-        <h2>6. Aggiornamenti</h2>
+        <h2>8. Risoluzione delle controversie online (ODR)</h2>
+        <p>Ai sensi del Reg. UE 524/2013, il consumatore residente nell'Unione Europea può presentare reclamo tramite la piattaforma di risoluzione online delle controversie messa a disposizione dalla Commissione Europea: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>. Per reclami diretti scrivi a <a href="mailto:info.preventivialexcarservice@gmail.com">info.preventivialexcarservice@gmail.com</a>.</p>
+
+        <h2>9. Legge applicabile e foro competente</h2>
+        <p>Il presente sito e i rapporti tra l'utente e Alex Car Service sono regolati dalla <strong>legge italiana</strong>. Per qualsiasi controversia è competente in via esclusiva il <strong>Foro di Pescara</strong>, salvo il foro inderogabile del consumatore previsto dall'art. 66-bis del Codice del Consumo.</p>
+
+        <h2>10. Aggiornamenti</h2>
         <p>Alex Car Service si riserva il diritto di modificare queste note legali in qualsiasi momento. Le modifiche saranno efficaci dalla data di pubblicazione su questa pagina.</p>
 
-        <h2>7. Documenti correlati</h2>
+        <h2>11. Documenti correlati</h2>
         <ul>
           <li><a href="privacy.html">Privacy Policy</a> – informativa sul trattamento dei dati personali</li>
           <li><a href="cookie.html">Cookie Policy</a> – informazioni sull'uso dei cookie</li>
+          <li><a href="#" onclick="event.preventDefault(); window.__openCookiePreferences && window.__openCookiePreferences();">Gestisci preferenze cookie</a> – modifica le preferenze di consenso</li>
         </ul>
 
       </div>
@@ -155,17 +185,28 @@
       <div class="footer-bottom">
         <div class="footer-bottom-meta">
           <p>P.IVA 02859570695 &middot; C.F. RSSLSN90M23Z138N &middot; SDI: M5UXCR1</p>
-          <p>&copy; <span id="year"></span> Alex Car Service. Tutti i diritti riservati. &middot; Powered by <strong>GRY Bromer</strong></p>
+          <p>&copy; <span id="year"></span> Alex Car Service. Tutti i diritti riservati. &middot; Powered by <strong>GRY Broker</strong></p>
         </div>
         <nav class="footer-legal-links" aria-label="Link legali">
           <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
           <a href="cookie.html" class="footer-legal-link">Cookie Policy</a>
           <a href="note-legali.html" class="footer-legal-link" aria-current="page">Note Legali</a>
+          <a href="#" class="footer-legal-link" onclick="event.preventDefault(); window.__openCookiePreferences && window.__openCookiePreferences();">Gestisci preferenze cookie</a>
         </nav>
       </div>
     </div>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (window.CookieBanner) {
+      window.CookieBanner.init({
+        policyUrl: 'cookie.html',
+        version: '1'
+      });
+    }
+  });
+  </script>
 </body>
 </html>
